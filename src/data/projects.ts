@@ -53,6 +53,8 @@ export const projects: Project[] = [
     ],
     reflection:
       'This was the first time I owned marketing for a real business rather than a personal project. The fixed opening date was the useful constraint: it forced me to decide what needed to exist, then publish consistently instead of polishing one asset. It is the work I point to when I want to show I can carry a launch.',
+    galleryIntro:
+      'Examples of the branding, marketing assets, and promotional work created during the launch.',
     images: [],
   },
   {
@@ -79,6 +81,8 @@ export const projects: Project[] = [
       'Qualified leads go to the right person, ready to be picked up',
       'Quiet leads get a follow-up instead of being forgotten',
     ],
+    galleryIntro:
+      'Examples of the automation workflow and lead journey, from Instagram engagement through follow-up.',
     images: [],
   },
   {
@@ -105,6 +109,8 @@ export const projects: Project[] = [
       'Follow up on a schedule rather than ad hoc',
       'Move qualified leads through deal stages, and archive the rest',
     ],
+    galleryIntro:
+      'Examples of the lead qualification workflow, CRM organization, and outreach pipeline.',
     images: [],
   },
   {
@@ -131,6 +137,8 @@ export const projects: Project[] = [
       'Draft scripts for long and short-form',
       'Create supporting images, with video planned next',
     ],
+    galleryIntro:
+      'Examples of the research, planning, scripting, and content production workflow.',
     images: [],
   },
 ];

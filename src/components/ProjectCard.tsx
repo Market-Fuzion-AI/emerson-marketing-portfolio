@@ -126,12 +126,8 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
       )}
 
       <div className="mb-2">
-        <h4 className={LABEL}>Outcome &amp; Evidence</h4>
-        <div className="bg-white border border-dashed border-slate-300 rounded-xl px-5 py-4">
-          <p className="text-sm text-slate-500 leading-relaxed">
-            Results and supporting evidence for this project are being compiled and will be added here.
-          </p>
-        </div>
+        <h4 className={LABEL}>Work Samples</h4>
+        <p className="text-slate-600 leading-relaxed max-w-3xl">{project.galleryIntro}</p>
         <ScreenshotGallery
           images={project.images}
           placeholderLabel={`Screenshots for ${project.title} to be added`}

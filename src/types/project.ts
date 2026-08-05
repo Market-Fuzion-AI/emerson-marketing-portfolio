@@ -47,6 +47,8 @@ export type Project = {
   caseStudy?: CaseStudySection[];
   /** Short closing paragraph, shown after the case study sections. */
   reflection?: string;
+  /** One or two sentences introducing what the screenshots show. */
+  galleryIntro: string;
   /** Screenshots. Empty until real evidence is added. */
   images: ProjectImage[];
 };

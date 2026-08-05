@@ -59,35 +59,104 @@ workflow steps means editing that one file — no component changes needed.
 
 Each project has a directory under `public/images/` matching its `id` in `src/data/projects.ts`:
 
-| Project | Directory |
-| --- | --- |
-| AI Content Studio | `public/images/ai-content-studio/` |
-| Prospecting Command Center | `public/images/prospecting-command-center/` |
-| Instagram DM Automation Funnel | `public/images/instagram-dm-automation/` |
-| MilwauTea Marketing Case Study | `public/images/milwautea/` |
+| Project | Directory | File prefix |
+| --- | --- | --- |
+| MilwauTea Marketing Case Study | `public/images/milwautea/` | `milwautea-` |
+| Instagram DM Automation Funnel | `public/images/instagram-dm-automation/` | `instagram-` |
+| Prospecting Command Center | `public/images/prospecting-command-center/` | `prospecting-` |
+| AI Content Studio | `public/images/ai-content-studio/` | `content-studio-` |
 
-**Naming convention:** `<project-id>-<n>.<ext>`, numbered from 1 — for example
-`milwautea-1.png`, `milwautea-2.png`, `milwautea-3.png`.
+### Naming convention
 
-**To make screenshots appear**, add them to the `images` array for that project in
-`src/data/projects.ts`:
+`<prefix><NN>-<subject>.webp`
+
+Two-digit numbers so files sort correctly past nine. Lowercase, hyphen-separated, one subject
+word. The number sets display order; the subject makes the file findable a year from now.
+
+```
+milwautea-01-logo.webp                 instagram-01-trigger.webp
+milwautea-02-mascot.webp               instagram-02-manychat.webp
+milwautea-03-menu.webp                 instagram-03-make-scenario.webp
+milwautea-04-social.webp               instagram-04-slack.webp
+milwautea-05-promo.webp
+milwautea-06-video.webp                prospecting-01-pipeline.webp
+                                       prospecting-02-qualification.webp
+content-studio-01-research.webp        prospecting-03-followup.webp
+content-studio-02-script.webp
+content-studio-03-output.webp
+```
+
+Use `.webp`. Fall back to `.png` for screenshots with sharp text if webp shows artifacts, and
+`.jpg` only for photographs.
+
+### Recommended count per project
+
+| Project | Screenshots | Why |
+| --- | ---: | --- |
+| MilwauTea | 6 | The featured case study, and the only project with three distinct disciplines to evidence. Six fills two clean rows of three. |
+| Instagram DM Funnel | 4 | One per stage of the lead journey. Fewer breaks the narrative; more repeats it. |
+| Prospecting Command Center | 3 | One row. The pipeline is one screen viewed three ways. |
+| AI Content Studio | 3 | One row. Enough to show input, middle, and output. |
+
+Sixteen total. Resist adding more. Every extra screenshot dilutes the ones that matter, and the
+count deliberately tapers to match the page hierarchy.
+
+### Making them appear
+
+Add them to the `images` array for that project in `src/data/projects.ts`:
 
 ```ts
 images: [
-  { src: '/images/milwautea/milwautea-1.png', alt: 'MilwauTea launch poster' },
-  { src: '/images/milwautea/milwautea-2.png', alt: 'MilwauTea Instagram grid' },
+  { src: '/images/milwautea/milwautea-01-logo.webp', alt: 'MilwauTea logo' },
+  { src: '/images/milwautea/milwautea-02-menu.webp', alt: 'MilwauTea menu design' },
 ],
 ```
 
-Every image needs a descriptive `alt` — it is used both by screen readers and as the lightbox
-label. While `images` is empty, the gallery renders placeholder tiles instead.
+That is the only file to edit. No component changes are needed, at any count.
 
-**Before adding images:** resize to display size and compress them. Thumbnails render at a 4:3
-aspect ratio, and the lightbox caps at roughly 1024px wide, so images beyond ~1600px wide are
-wasted bytes.
+Every image needs a descriptive `alt`. It is read by screen readers and used as the lightbox
+label. While `images` is empty, the gallery renders placeholder tiles.
 
-## Outcomes and evidence
+**Before adding images:** resize and compress. Thumbnails render at a 4:3 aspect ratio and the
+lightbox caps near 1024px wide, so anything beyond ~1600px wide is wasted bytes. Crop to the
+content that matters rather than shipping a full desktop screenshot.
 
-Each project card has an "Outcome & Evidence" block that is intentionally a placeholder. Results
-should be added only once they are real and verifiable — the portfolio deliberately contains no
-invented metrics.
+## Asset collection checklist
+
+Working notes for gathering screenshots. Not rendered anywhere on the site.
+
+**MilwauTea** (target 6)
+
+- [ ] Logo
+- [ ] Mascot
+- [ ] Menu design
+- [ ] Social graphics
+- [ ] Promotional / giveaway design
+- [ ] Video still or CapCut timeline
+- [ ] Instagram or Facebook profile grid
+
+**Instagram DM Funnel** (target 4)
+
+- [ ] Instagram post with the triggering comment
+- [ ] ManyChat conversation flow
+- [ ] Make.com scenario canvas
+- [ ] Slack notification
+- [ ] Follow-up message sequence
+
+**Prospecting Command Center** (target 3)
+
+- [ ] Pipeline / board view
+- [ ] Lead qualification or scoring view
+- [ ] Follow-up or outreach tracking
+- [ ] Archive view
+
+**AI Content Studio** (target 3)
+
+- [ ] Topic research
+- [ ] Idea and hook development
+- [ ] Script draft
+- [ ] Generated image
+- [ ] Finished published post
+
+Checklists list more candidates than the target count on purpose. Shoot wide, then pick the
+strongest. Redact client names, emails, phone numbers and any real lead data before exporting.
