@@ -17,6 +17,13 @@ export type ProjectDetail = {
 export type Project = {
   id: string;
   title: string;
+  /**
+   * Short eyebrow shown above the title, e.g. "Featured Case Study".
+   * Omit for projects that carry no special billing.
+   */
+  label?: string;
+  /** Gives the card a more prominent heading. Use sparingly. */
+  featured?: boolean;
   positioning: string;
   objective: string;
   role: string;

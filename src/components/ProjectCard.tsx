@@ -22,7 +22,18 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
       transition={{ delay: index * 0.1 }}
       className="bg-slate-50 rounded-2xl p-8 md:p-10 border border-slate-200 shadow-sm hover:shadow-md transition-shadow scroll-mt-28"
     >
-      <h3 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">{project.title}</h3>
+      {project.label && (
+        <h4 className="text-primary-blue font-semibold tracking-wide uppercase text-sm mb-3">
+          {project.label}
+        </h4>
+      )}
+      <h3
+        className={`font-bold text-slate-900 mb-4 ${
+          project.featured ? 'text-3xl md:text-4xl' : 'text-2xl md:text-3xl'
+        }`}
+      >
+        {project.title}
+      </h3>
       <p className="text-lg text-slate-600 leading-relaxed mb-10 max-w-3xl">{project.positioning}</p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
