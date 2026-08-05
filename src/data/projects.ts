@@ -18,11 +18,11 @@ export const projects: Project[] = [
     label: 'Featured Case Study',
     featured: true,
     positioning:
-      'A real-world boba-shop launch and growth campaign involving branding, logo and mascot development, menus, social media content, promotional design, giveaways, community marketing, organic growth, and video production.',
+      'A real-world boba shop launch, covering the brand identity, the creative assets, and the social content and promotions that introduced it locally.',
     objective:
-      'Launch a new local boba shop and build an audience for it from zero — establishing the brand, giving it a consistent visual identity, and growing an organic community around the opening.',
+      'Launch a new local boba shop and build an audience for it from zero, with no existing brand, following, or customer base to work from.',
     role:
-      'Handled the marketing side of the launch: brand and visual identity development, content production, promotional campaigns, and community growth.',
+      'Owned the marketing side of the launch, from brand development through to the content and campaigns that ran after opening.',
     skills: [
       'Branding',
       'Graphic Design',
@@ -34,15 +34,31 @@ export const projects: Project[] = [
       'Organic Growth',
     ],
     tools: [],
-    approach: [
-      'Brand development including logo and mascot',
-      'Menu design and in-store printed materials',
-      'Ongoing social media content production',
-      'Promotional design for offers and launch moments',
-      'Giveaways to drive early engagement',
-      'Community marketing to build a local audience',
-      'Video production for social channels',
+    caseStudy: [
+      {
+        title: 'Brand Development',
+        body: 'Established the identity the shop needed before it could open.',
+        items: ['Brand strategy', 'Logo design', 'Mascot creation', 'Visual identity'],
+      },
+      {
+        title: 'Marketing Execution',
+        body: 'Ran the ongoing marketing that built an audience around the opening.',
+        items: [
+          'Social media content',
+          'Promotional campaigns',
+          'Giveaways',
+          'Community marketing',
+          'Organic audience growth',
+        ],
+      },
+      {
+        title: 'Creative Production',
+        body: 'Produced the printed and digital assets the campaigns ran on.',
+        items: ['Menu design', 'In-store print materials', 'Promotional graphics', 'Video for social'],
+      },
     ],
+    reflection:
+      'Launching a brand from zero meant handling every marketing discipline at once: brand strategy, design, content production, promotions, and community building. The main lesson was how much early traction depends on publishing consistently rather than waiting for a perfect asset. It is the clearest example of my marketing work applied to a real business with real customers.',
     images: [],
   },
   {

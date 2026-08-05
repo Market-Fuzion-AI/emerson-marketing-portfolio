@@ -74,21 +74,56 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
         </div>
       </div>
 
-      <div className="mb-10">
-        <h4 className={LABEL}>Workflow &amp; Approach</h4>
-        <ol className="space-y-3">
-          {project.approach.map((step, i) => (
-            <li key={i} className="flex items-center gap-4">
-              <span className="flex-shrink-0 w-8 h-8 rounded-full bg-white border border-slate-200 flex items-center justify-center text-sm font-bold text-slate-500 shadow-sm">
-                {i + 1}
-              </span>
-              <span className="flex-grow bg-white border border-slate-200 rounded-lg px-4 py-3 text-sm font-medium text-slate-700 shadow-sm">
-                {step}
-              </span>
-            </li>
-          ))}
-        </ol>
-      </div>
+      {project.caseStudy && (
+        <div className="mb-10">
+          <h4 className={LABEL}>Case Study Breakdown</h4>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {project.caseStudy.map((section) => (
+              <div
+                key={section.title}
+                className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm"
+              >
+                <h5 className="text-base font-bold text-slate-900 mb-2">{section.title}</h5>
+                <p className="text-sm text-slate-600 leading-relaxed mb-4">{section.body}</p>
+                <div className="flex flex-wrap gap-2">
+                  {section.items.map((item) => (
+                    <span key={item} className={TAG}>
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {project.reflection && (
+        <div className="mb-10">
+          <h4 className={LABEL}>Reflection</h4>
+          <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+            <p className="text-slate-600 leading-relaxed">{project.reflection}</p>
+          </div>
+        </div>
+      )}
+
+      {project.approach && project.approach.length > 0 && (
+        <div className="mb-10">
+          <h4 className={LABEL}>Workflow &amp; Approach</h4>
+          <ol className="space-y-3">
+            {project.approach.map((step, i) => (
+              <li key={i} className="flex items-center gap-4">
+                <span className="flex-shrink-0 w-8 h-8 rounded-full bg-white border border-slate-200 flex items-center justify-center text-sm font-bold text-slate-500 shadow-sm">
+                  {i + 1}
+                </span>
+                <span className="flex-grow bg-white border border-slate-200 rounded-lg px-4 py-3 text-sm font-medium text-slate-700 shadow-sm">
+                  {step}
+                </span>
+              </li>
+            ))}
+          </ol>
+        </div>
+      )}
 
       <div className="mb-2">
         <h4 className={LABEL}>Outcome &amp; Evidence</h4>
