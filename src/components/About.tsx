@@ -14,12 +14,12 @@ export function About() {
             className="text-center mb-16"
           >
             <h2 className="text-primary-blue font-semibold tracking-wide uppercase text-sm mb-3">Background</h2>
-            <h3 className="text-3xl md:text-4xl font-bold text-slate-900">About Me</h3>
+            <h1 className="text-3xl md:text-4xl font-bold text-slate-900">About Me</h1>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
             {/* Left Column */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -27,12 +27,18 @@ export function About() {
               className="md:col-span-4 flex justify-center md:justify-end"
             >
               <div className="w-64 h-64 bg-white rounded-full border-4 border-slate-50 shadow-xl overflow-hidden">
-                <img src="/images/profile-photo/profile-pic.jpg" alt="Emerson Alvarenga" className="w-full h-full object-cover" />
+                <img
+                  src="/images/profile-photo/profile-pic.jpg"
+                  alt="Emerson Alvarenga"
+                  width={256}
+                  height={256}
+                  className="w-full h-full object-cover"
+                />
               </div>
             </motion.div>
 
             {/* Right Column */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -41,13 +47,17 @@ export function About() {
             >
               <div className="text-lg text-slate-600 space-y-6 leading-relaxed mb-10">
                 <p>
-                  Hi, I’m Emerson. I’m a developer focused on building AI-powered tools and automation systems that help people work more efficiently.
+                  Hi, I&rsquo;m Emerson &mdash; a digital marketer focused on content, social media, and campaign
+                  execution.
                 </p>
                 <p>
-                  My work combines modern web technologies, AI APIs, and workflow automation platforms to create systems that connect applications, automate processes, and solve real operational problems.
+                  My work covers the practical side of marketing: researching and producing content, running
+                  promotional campaigns, growing an audience organically, and managing leads from first contact
+                  through follow-up.
                 </p>
                 <p>
-                  I enjoy experimenting with new ideas, building small applications to test concepts, and designing systems that turn complex workflows into simple, automated solutions.
+                  I also use automation and AI-assisted workflows to support that work &mdash; not as the point of
+                  it, but to remove repetitive steps and keep campaigns running consistently.
                 </p>
               </div>
             </motion.div>

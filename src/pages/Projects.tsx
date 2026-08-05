@@ -1,20 +1,34 @@
 import React from 'react';
-import { VectorCaseStudy } from '../components/VectorCaseStudy';
-import { VectorEvolution } from '../components/VectorEvolution';
-import { SystemArchitecture } from '../components/SystemArchitecture';
-import { AutomationWorkflows } from '../components/AutomationWorkflows';
-import { AIIntegration } from '../components/AIIntegration';
-import { OtherProjects } from '../components/OtherProjects';
+import { motion } from 'motion/react';
+import { projects } from '../data/projects';
+import { ProjectCard } from '../components/ProjectCard';
 
 export function Projects() {
   return (
-    <div className="pt-24">
-      <VectorCaseStudy />
-      <VectorEvolution />
-      <SystemArchitecture />
-      <AutomationWorkflows />
-      <AIIntegration />
-      <OtherProjects />
-    </div>
+    <section id="projects" className="pt-32 pb-24 bg-white">
+      <div className="max-w-7xl mx-auto px-6 md:px-12">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="max-w-3xl mx-auto text-center mb-16"
+        >
+          <h2 className="text-primary-blue font-semibold tracking-wide uppercase text-sm mb-3">Portfolio</h2>
+          <h1 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Selected Work</h1>
+          <p className="text-lg text-slate-600 leading-relaxed">
+            Four projects covering content marketing, lead generation, marketing automation, and a real-world
+            brand launch. Each one is documented below, with screenshots and results being added as they are
+            compiled.
+          </p>
+        </motion.div>
+
+        <div className="space-y-8">
+          {projects.map((project, index) => (
+            <ProjectCard key={project.id} project={project} index={index} />
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }

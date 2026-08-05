@@ -1,47 +1,47 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Cpu, GitBranch, Webhook, Bot, Database, Zap, Server, Layers } from 'lucide-react';
+import { PenLine, Share2, Mail, Users, Megaphone, Search, Workflow, BarChart3 } from 'lucide-react';
 
 const skills = [
   {
-    icon: Cpu,
-    title: 'AI Automation Systems',
-    description: 'Designing AI-powered automation workflows that connect applications and external services.'
+    icon: PenLine,
+    title: 'Content Marketing',
+    description: 'Researching topics, developing angles, and producing content built to be published, not just planned.'
   },
   {
-    icon: GitBranch,
-    title: 'Automation Workflow Design',
-    description: 'Creating event-driven pipelines triggered by user actions and webhook events.'
+    icon: Share2,
+    title: 'Social Media Marketing',
+    description: 'Producing and scheduling social content, and growing an audience organically around a brand.'
   },
   {
-    icon: Webhook,
-    title: 'Webhook Architecture',
-    description: 'Connecting applications with external automation platforms using webhook triggers.'
+    icon: Megaphone,
+    title: 'Campaign Management',
+    description: 'Planning and running promotional campaigns from concept through to publication and follow-up.'
   },
   {
-    icon: Bot,
-    title: 'AI API Integration',
-    description: 'Integrating OpenAI models for text and image generation inside production workflows.'
+    icon: Users,
+    title: 'Lead Management & CRM',
+    description: 'Qualifying leads and moving them through defined pipeline stages so nothing is lost in the process.'
   },
   {
-    icon: Database,
-    title: 'Cloud Infrastructure',
-    description: 'Building backend systems using Firebase Authentication, Firestore, and Storage.'
+    icon: Workflow,
+    title: 'Marketing Automation',
+    description: 'Connecting marketing tools so routine follow-up, routing, and notifications happen automatically.'
   },
   {
-    icon: Zap,
-    title: 'Event-Driven Systems',
-    description: 'Designing systems where application events trigger automated processes.'
+    icon: Mail,
+    title: 'Email & Direct Outreach',
+    description: 'Preparing tailored outreach and follow-up sequences that keep conversations moving.'
   },
   {
-    icon: Server,
-    title: 'Secure API Architecture',
-    description: 'Protecting API keys and requests using Cloud Functions as a secure proxy.'
+    icon: Search,
+    title: 'SEO & Content Research',
+    description: 'Using search and topic research to decide what to create before committing production time to it.'
   },
   {
-    icon: Layers,
-    title: 'Full Stack Development',
-    description: 'Building complete applications across frontend UI, backend services, and automation layers.'
+    icon: BarChart3,
+    title: 'Analytics & Reporting',
+    description: 'Tracking how content and campaigns perform, and reporting on what is worth repeating.'
   }
 ];
 
@@ -51,9 +51,9 @@ export function Skills() {
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="text-center mb-10">
           <h2 className="text-primary-blue font-semibold tracking-wide uppercase text-sm mb-3">Expertise</h2>
-          <h3 className="text-3xl md:text-4xl font-bold text-slate-900">Skills Demonstrated</h3>
+          <h3 className="text-3xl md:text-4xl font-bold text-slate-900">What I Do</h3>
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {skills.map((skill, index) => {
             const Icon = skill.icon;
@@ -67,7 +67,7 @@ export function Skills() {
                 className="bg-white p-5 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow flex items-start gap-4 text-left"
               >
                 <div className="w-10 h-10 shrink-0 bg-blue-50 text-primary-blue rounded-lg flex items-center justify-center">
-                  <Icon size={20} />
+                  <Icon size={20} aria-hidden="true" />
                 </div>
                 <div>
                   <h4 className="text-base font-bold text-slate-900 mb-1">{skill.title}</h4>
