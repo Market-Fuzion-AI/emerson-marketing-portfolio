@@ -18,11 +18,11 @@ export const projects: Project[] = [
     label: 'Featured Case Study',
     featured: true,
     positioning:
-      'A real-world boba shop launch, covering the brand identity, the creative assets, and the social content and promotions that introduced it locally.',
-    objective:
-      'Launch a new local boba shop and build an audience for it from zero, with no existing brand, following, or customer base to work from.',
+      'The launch of a new bubble tea shop, covering brand identity, creative assets, and the content that introduced it locally.',
+    challenge:
+      'MilwauTea was a brand new bubble tea shop opening in a local market. It had no brand identity and no social media presence to build on. My job was to create the brand and launch it publicly, through creative assets, marketing, and community engagement.',
     role:
-      'Owned the marketing side of the launch, from brand development through to the content and campaigns that ran after opening.',
+      'Responsible for the brand, the creative work, and everything published before and after opening.',
     skills: [
       'Branding',
       'Graphic Design',
@@ -37,28 +37,22 @@ export const projects: Project[] = [
     caseStudy: [
       {
         title: 'Brand Development',
-        body: 'Established the identity the shop needed before it could open.',
-        items: ['Brand strategy', 'Logo design', 'Mascot creation', 'Visual identity'],
+        body: 'Created the identity the shop needed before opening.',
+        items: ['Brand strategy', 'Logo', 'Mascot', 'Visual identity'],
       },
       {
         title: 'Marketing Execution',
-        body: 'Ran the ongoing marketing that built an audience around the opening.',
-        items: [
-          'Social media content',
-          'Promotional campaigns',
-          'Giveaways',
-          'Community marketing',
-          'Organic audience growth',
-        ],
+        body: 'Handled the day-to-day marketing during the launch.',
+        items: ['Social content', 'Launch promotions', 'Giveaways', 'Local community outreach'],
       },
       {
         title: 'Creative Production',
-        body: 'Produced the printed and digital assets the campaigns ran on.',
-        items: ['Menu design', 'In-store print materials', 'Promotional graphics', 'Video for social'],
+        body: 'Produced the printed and digital assets campaigns ran on.',
+        items: ['Menus', 'In-store print', 'Promo graphics', 'Short-form video'],
       },
     ],
     reflection:
-      'Launching a brand from zero meant handling every marketing discipline at once: brand strategy, design, content production, promotions, and community building. The main lesson was how much early traction depends on publishing consistently rather than waiting for a perfect asset. It is the clearest example of my marketing work applied to a real business with real customers.',
+      'This was the first time I owned marketing for a real business rather than a personal project. The fixed opening date was the useful constraint: it forced me to decide what needed to exist, then publish consistently instead of polishing one asset. It is the work I point to when I want to show I can carry a launch.',
     images: [],
   },
   {

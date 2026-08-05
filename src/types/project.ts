@@ -35,7 +35,9 @@ export type Project = {
   /** Gives the card a more prominent heading. Use sparingly. */
   featured?: boolean;
   positioning: string;
-  objective: string;
+  objective?: string;
+  /** Replaces the Objective block on case studies. */
+  challenge?: string;
   role: string;
   skills: string[];
   tools: string[];

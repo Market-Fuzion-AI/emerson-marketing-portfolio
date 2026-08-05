@@ -38,8 +38,8 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
         <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
-          <h4 className={LABEL}>Objective</h4>
-          <p className="text-slate-600 leading-relaxed">{project.objective}</p>
+          <h4 className={LABEL}>{project.challenge ? 'Business Challenge' : 'Objective'}</h4>
+          <p className="text-slate-600 leading-relaxed">{project.challenge ?? project.objective}</p>
         </div>
         <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
           <h4 className={LABEL}>My Role</h4>
