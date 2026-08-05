@@ -17,9 +17,10 @@ export function Projects() {
           <h2 className="text-primary-blue font-semibold tracking-wide uppercase text-sm mb-3">Portfolio</h2>
           <h1 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Selected Work</h1>
           <p className="text-lg text-slate-600 leading-relaxed">
-            Four projects covering content marketing, lead generation, marketing automation, and a real-world
-            brand launch. Each one is documented below, with screenshots and results being added as they are
-            compiled.
+            Four projects covering the marketing I have done in practice: brand development and campaign
+            management for a local launch, content marketing and social media week to week, and the CRM and
+            marketing automation behind lead generation and lead nurturing. AI-assisted workflows support content
+            strategy and production. Screenshots and results are being added as they are compiled.
           </p>
         </motion.div>
 

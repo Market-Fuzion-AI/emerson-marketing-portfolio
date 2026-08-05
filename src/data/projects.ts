@@ -33,7 +33,7 @@ export const projects: Project[] = [
       'Promotional Campaigns',
       'Organic Growth',
     ],
-    tools: [],
+    tools: ['Canva', 'Instagram', 'Facebook', 'Meta Business Suite', 'CapCut'],
     caseStudy: [
       {
         title: 'Brand Development',
@@ -98,7 +98,7 @@ export const projects: Project[] = [
       'Campaign Management',
       'Marketing Automation',
     ],
-    tools: [],
+    tools: ['Google Sheets', 'Google Docs', 'Make.com', 'Slack', 'ChatGPT'],
     approach: [
       'Research local businesses and score them against qualification criteria',
       'Prepare tailored outreach for the ones worth contacting',
@@ -124,7 +124,7 @@ export const projects: Project[] = [
       'AI-Assisted Marketing',
       'Creative Direction',
     ],
-    tools: [],
+    tools: ['ChatGPT', 'Claude', 'Canva', 'Google Docs'],
     approach: [
       'Research topics worth covering',
       'Develop ideas into angles and hooks',
