@@ -11,7 +11,7 @@ const skills = [
   {
     icon: Share2,
     title: 'Social Media Marketing',
-    description: 'Planning, producing, and scheduling content that grows a following organically instead of paying for reach.'
+    description: 'Planning, producing, and scheduling social content designed to build consistent engagement and organic audience growth.'
   },
   {
     icon: Palette,
@@ -21,7 +21,7 @@ const skills = [
   {
     icon: Megaphone,
     title: 'Campaign Management',
-    description: 'Promotions from first concept through to launch, plus an honest read on what came out of them.'
+    description: 'Planning promotional campaigns from initial concept through launch, then reviewing performance to identify what should be improved or repeated.'
   },
   {
     icon: Users,

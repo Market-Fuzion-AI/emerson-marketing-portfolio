@@ -32,8 +32,8 @@ export function Hero() {
             </h1>
             <p className="text-lg md:text-xl text-slate-600 mb-10 leading-relaxed max-w-2xl mx-auto">
               I work across content marketing, social media, and campaign execution, with a focus on turning
-              attention into leads. I&rsquo;ve launched a local brand from the ground up and built the CRM and
-              automation workflows that keep those leads moving.
+              attention into leads. My experience includes launching a local brand from the ground up and
+              building CRM and automation workflows that support lead capture and follow-up.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
