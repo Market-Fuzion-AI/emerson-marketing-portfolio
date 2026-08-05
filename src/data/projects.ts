@@ -48,7 +48,7 @@ export const projects: Project[] = [
   {
     id: 'instagram-dm-automation',
     title: 'Instagram DM Automation Funnel',
-    label: 'Marketing Automation',
+    label: 'Featured Automation Project',
     positioning:
       'A comment-to-DM lead funnel using Instagram, ManyChat, Make.com, Slack notifications, routing, and follow-up logic.',
     objective:
