@@ -49,7 +49,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
         <div>
-          <h4 className={LABEL}>Marketing Skills Demonstrated</h4>
+          <h4 className={LABEL}>Marketing Skills</h4>
           <div className="flex flex-wrap gap-2">
             {project.skills.map((skill) => (
               <span key={skill} className={TAG}>
@@ -76,7 +76,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
 
       {project.caseStudy && (
         <div className="mb-10">
-          <h4 className={LABEL}>Case Study Breakdown</h4>
+          <h4 className={LABEL}>Scope of Work</h4>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {project.caseStudy.map((section) => (
               <div
@@ -109,7 +109,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
 
       {project.approach && project.approach.length > 0 && (
         <div className="mb-10">
-          <h4 className={LABEL}>Workflow &amp; Approach</h4>
+          <h4 className={LABEL}>How It Works</h4>
           <ol className="space-y-3">
             {project.approach.map((step, i) => (
               <li key={i} className="flex items-center gap-4">

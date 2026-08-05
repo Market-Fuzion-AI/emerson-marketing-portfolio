@@ -31,7 +31,7 @@ export const projects: Project[] = [
       'Video Production',
       'Community Marketing',
       'Promotional Campaigns',
-      'Organic Growth',
+      'Organic Social',
     ],
     tools: ['Canva', 'Instagram', 'Facebook', 'Meta Business Suite', 'CapCut'],
     caseStudy: [
@@ -76,7 +76,7 @@ export const projects: Project[] = [
     approach: [
       'A comment on a post starts a direct message',
       'The conversation qualifies the lead before anyone spends time',
-      'Qualified leads reach the right person with the context attached',
+      'Qualified leads go to the right person, ready to be picked up',
       'Quiet leads get a follow-up instead of being forgotten',
     ],
     images: [],
@@ -89,7 +89,7 @@ export const projects: Project[] = [
     objective:
       'Replace scattered prospecting with one pipeline, so no lead is tracked by memory or dropped halfway through.',
     role:
-      'Defined the qualification criteria and the pipeline stages leads move through.',
+      'Set the qualification criteria and the stages a lead moves through.',
     skills: [
       'Lead Management',
       'CRM',
@@ -115,21 +115,21 @@ export const projects: Project[] = [
     objective:
       'Make content production repeatable, so publishing does not depend on starting from a blank page each time.',
     role:
-      'Designed the workflow and defined what happens at each stage.',
+      'Mapped the workflow and what each stage should produce.',
     skills: [
       'Content Marketing',
       'Content Production',
       'Copywriting',
       'Social Media Marketing',
       'AI-Assisted Marketing',
-      'Creative Direction',
+      'Content Strategy',
     ],
     tools: ['ChatGPT', 'Claude', 'Canva', 'Google Docs'],
     approach: [
       'Research topics worth covering',
       'Develop ideas into angles and hooks',
       'Draft scripts for long and short-form',
-      'Generate supporting images, with video planned next',
+      'Create supporting images, with video planned next',
     ],
     images: [],
   },
