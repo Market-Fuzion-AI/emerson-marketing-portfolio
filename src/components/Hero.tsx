@@ -22,7 +22,7 @@ export function Hero() {
           >
             <div className="inline-flex items-center px-3 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-primary-blue text-sm font-semibold mb-6">
               <span className="flex h-2 w-2 rounded-full bg-primary-blue mr-2"></span>
-              Open to new opportunities
+              Open to digital marketing roles
             </div>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-slate-900 leading-[1.1] mb-6">
               Emerson Alvarenga <br />
@@ -31,8 +31,9 @@ export function Hero() {
               </span>
             </h1>
             <p className="text-lg md:text-xl text-slate-600 mb-10 leading-relaxed max-w-2xl mx-auto">
-              I plan and produce marketing content, run campaigns, and manage leads end to end &mdash; using
-              automation and AI-assisted workflows to make the process faster and more consistent.
+              I work across content marketing, social media, and campaign execution, with a focus on turning
+              attention into leads. I&rsquo;ve launched a local brand from the ground up and built the CRM and
+              automation workflows that keep those leads moving.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -40,7 +41,7 @@ export function Hero() {
                 to="/projects"
                 className="w-full sm:w-auto inline-flex justify-center items-center px-8 py-4 bg-primary-blue text-white font-medium rounded-xl hover:bg-blue-700 transition-all shadow-lg shadow-blue-500/25"
               >
-                View My Work
+                View Case Studies
                 <ArrowRight className="ml-2 h-5 w-5" aria-hidden="true" />
               </Link>
               <a

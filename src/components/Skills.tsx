@@ -1,47 +1,47 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { PenLine, Share2, Mail, Users, Megaphone, Search, Workflow, BarChart3 } from 'lucide-react';
+import { PenLine, Share2, Palette, Megaphone, Users, Workflow, Mail, BarChart3 } from 'lucide-react';
 
 const skills = [
   {
     icon: PenLine,
     title: 'Content Marketing',
-    description: 'Researching topics, developing angles, and producing content built to be published, not just planned.'
+    description: 'Topic and SEO research through to finished posts, built around what an audience is already looking for.'
   },
   {
     icon: Share2,
     title: 'Social Media Marketing',
-    description: 'Producing and scheduling social content, and growing an audience organically around a brand.'
+    description: 'Planning, producing, and scheduling content that grows a following organically instead of paying for reach.'
+  },
+  {
+    icon: Palette,
+    title: 'Brand Marketing',
+    description: 'Brand identity, voice, and visual assets that keep a business looking consistent everywhere customers find it.'
   },
   {
     icon: Megaphone,
     title: 'Campaign Management',
-    description: 'Planning and running promotional campaigns from concept through to publication and follow-up.'
+    description: 'Promotions from first concept through to launch, plus an honest read on what came out of them.'
   },
   {
     icon: Users,
-    title: 'Lead Management & CRM',
-    description: 'Qualifying leads and moving them through defined pipeline stages so nothing is lost in the process.'
+    title: 'Lead Generation & Nurturing',
+    description: 'Turning engagement into real conversations, then following up on a schedule so interest does not cool off.'
   },
   {
     icon: Workflow,
-    title: 'Marketing Automation',
-    description: 'Connecting marketing tools so routine follow-up, routing, and notifications happen automatically.'
+    title: 'CRM & Marketing Automation',
+    description: 'Pipelines and automated workflows that route, track, and follow up on leads without manual chasing.'
   },
   {
     icon: Mail,
-    title: 'Email & Direct Outreach',
-    description: 'Preparing tailored outreach and follow-up sequences that keep conversations moving.'
-  },
-  {
-    icon: Search,
-    title: 'SEO & Content Research',
-    description: 'Using search and topic research to decide what to create before committing production time to it.'
+    title: 'Email & Outreach',
+    description: 'Outreach and follow-up sequences written to earn a reply, not just to fill an inbox.'
   },
   {
     icon: BarChart3,
     title: 'Analytics & Reporting',
-    description: 'Tracking how content and campaigns perform, and reporting on what is worth repeating.'
+    description: 'Tracking what content and campaigns actually did, and reporting clearly on what is worth repeating.'
   }
 ];
 
@@ -50,7 +50,7 @@ export function Skills() {
     <section id="skills" className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="text-center mb-10">
-          <h2 className="text-primary-blue font-semibold tracking-wide uppercase text-sm mb-3">Expertise</h2>
+          <h2 className="text-primary-blue font-semibold tracking-wide uppercase text-sm mb-3">Core Skills</h2>
           <h3 className="text-3xl md:text-4xl font-bold text-slate-900">What I Do</h3>
         </div>
 
