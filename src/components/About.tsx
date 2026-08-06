@@ -47,8 +47,8 @@ export function About() {
             >
               <div className="text-lg text-slate-600 space-y-6 leading-relaxed mb-10">
                 <p>
-                  Hi, I&rsquo;m Emerson. I&rsquo;m an early-career digital marketer, and most of what I know came
-                  from launching a local business and handling the marketing that went with it.
+                  Hi, I&rsquo;m Emerson. I&rsquo;m a digital marketer, and most of what I know came from launching
+                  a local business and handling the marketing that went with it.
                 </p>
                 <p>
                   That launch covered brand development and visual identity, content production, and campaign
