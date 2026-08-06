@@ -1,7 +1,17 @@
 import React from 'react';
 import { Linkedin, Github, Mail } from 'lucide-react';
 
-const EMAIL = 'e.alvarenga3592@icloud.com';
+const EMAIL = 'Em3rz0n2025@gmail.com';
+
+/**
+ * The single source of truth for every email link on the site.
+ *
+ * A plain mailto: URL, so the operating system hands off to whatever the
+ * visitor has set as their default mail application. Deliberately not a
+ * Gmail compose URL or any other web link.
+ */
+export const MAILTO = `mailto:${EMAIL}?subject=Marketing%20Opportunity`;
+
 const LINKEDIN = 'https://www.linkedin.com/in/emerson-alvarenga-280158248/';
 const GITHUB = 'https://github.com/Market-Fuzion-AI';
 
@@ -27,7 +37,7 @@ export function Footer() {
           </div>
 
           <nav aria-label="Contact links" className="flex flex-col sm:flex-row gap-4 sm:gap-8">
-            <a href={`mailto:${EMAIL}`} className={linkClass} aria-label={`Email Emerson at ${EMAIL}`}>
+            <a href={MAILTO} className={linkClass} aria-label={`Email Emerson at ${EMAIL}`}>
               <Mail size={18} aria-hidden="true" />
               Email
             </a>
