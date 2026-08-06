@@ -63,8 +63,10 @@ export const projects: Project[] = [
       // { src: '/images/milwautea/milwautea-03-menu.webp', alt: 'MilwauTea drink menu laid out for in-store display' },
       // { src: '/images/milwautea/milwautea-04-social.webp', alt: 'MilwauTea Instagram feed showing the launch content' },
       // { src: '/images/milwautea/milwautea-05-promo.webp', alt: 'MilwauTea promotional graphic for a launch offer' },
-      // { src: '/images/milwautea/milwautea-06-video.webp', alt: 'Still from a MilwauTea short-form video made for social' },
+      // { src: '/images/milwautea/milwautea-06-mockup.webp', alt: 'MilwauTea branding shown on a store mockup' },
     ],
+    // Videos 07 (Instagram Reel) and 08 (promotional video) are planned but the
+    // gallery renders images only. See README, "Video support", before adding them.
   },
   {
     id: 'instagram-dm-automation',

@@ -86,7 +86,7 @@ milwautea-02-mascot.webp            instagram-02-manychat.webp
 milwautea-03-menu.webp              instagram-03-make-scenario.webp
 milwautea-04-social.webp            instagram-04-slack.webp
 milwautea-05-promo.webp
-milwautea-06-video.webp             prospecting-01-pipeline.webp
+milwautea-06-mockup.webp            prospecting-01-pipeline.webp
                                     prospecting-02-qualification.webp
 content-studio-01-research.webp     prospecting-03-followup.webp
 content-studio-02-ideas.webp
@@ -135,28 +135,97 @@ label, so describe the subject rather than writing "screenshot".
 
 ### 6. Recommended count per project
 
-| Project | Screenshots | Why |
-| --- | ---: | --- |
-| MilwauTea | 6 | The featured case study, and the only project with three distinct disciplines to evidence. Six fills two clean rows of three. |
-| AI Content Studio | 5 | The workflow is a sequence, and each step is a different artefact. Fewer than five breaks the story. |
-| Instagram DM Funnel | 4 | One per stage of the lead journey. Fewer breaks the narrative; more repeats it. |
-| Prospecting Command Center | 3 | One row. The pipeline is one screen viewed three ways. |
+| Project | Images | Videos | Why |
+| --- | ---: | ---: | --- |
+| MilwauTea | 6 | 2 | The featured case study, and the only project with three distinct disciplines to evidence. The two videos are the only proof of the Video Production skill claimed on the card. |
+| AI Content Studio | 5 | 0 | The workflow is a sequence and each step is a different artefact. Fewer than five breaks the story. |
+| Instagram DM Funnel | 4 | 0 | One per stage of the lead journey. Fewer breaks the narrative; more repeats it. |
+| Prospecting Command Center | 3 | 0 | One row. The pipeline is one screen viewed three ways. |
 
-Eighteen total. Resist adding more. Every extra screenshot dilutes the ones that matter.
+Eighteen images plus two videos. Resist adding more.
+
+**MilwauTea order**
+
+| # | Slot | File |
+| ---: | --- | --- |
+| 1 | Logo | `milwautea-01-logo.webp` |
+| 2 | Mascot / branding | `milwautea-02-mascot.webp` |
+| 3 | Menu design | `milwautea-03-menu.webp` |
+| 4 | Social media graphic | `milwautea-04-social.webp` |
+| 5 | Promotional graphic / flyer | `milwautea-05-promo.webp` |
+| 6 | Store or brand mockup | `milwautea-06-mockup.webp` |
+| 7 | Instagram Reel | `milwautea-07-reel.mp4` (video, see below) |
+| 8 | Promotional video | `milwautea-08-promo-video.mp4` (video, see below) |
+
+## Video support
+
+**Not implemented. Do not add video files yet.**
+
+The gallery renders images only. `ProjectImage` is `{ src, alt }`, the
+thumbnail is an `<img>`, and the lightbox is an `<img>`. Putting an `.mp4` in
+an `images` array produces a broken image icon, not a player.
+
+Slots 7 and 8 above are reserved for when support is added. Until then,
+MilwauTea ships six images and the Video Production claim on its card has no
+visual evidence behind it.
+
+### What adding support would take
+
+Three files, roughly 40 lines:
+
+1. **`src/types/project.ts`** — add an optional `poster?: string` to
+   `ProjectImage`. Its presence marks the entry as a video, so no separate
+   type or discriminated union is needed.
+2. **`src/components/ui/ScreenshotGallery.tsx`** — when `poster` is set,
+   render the poster as the thumbnail with a small play badge over it. Using
+   a poster image rather than a `<video>` element keeps the grid cheap to
+   load.
+3. **`src/components/ui/Lightbox.tsx`** — when `poster` is set, render
+   `<video controls playsInline>` instead of `<img>`.
+
+The one subtlety is in the lightbox. Its focus trap currently keeps Tab on
+the close button, because that is the only focusable element inside. Video
+controls are focusable, so that trap has to be relaxed to cycle between the
+video and the close button instead of pinning focus.
+
+Every video also needs a poster image, or the thumbnail will be blank until
+the file loads.
+
+### Whether it is worth doing
+
+Probably yes, but only for one or two short clips.
+
+The case for it: MilwauTea's card claims Video Production as a skill and
+short-form video as a deliverable. Without playable video that claim rests on
+the copy alone, and it is the only skill on the page with no way to show it.
+
+The case against: video files are far heavier than anything else on the site.
+A thirty second reel is commonly 5 to 20MB, against 38KB for the profile
+photo and roughly 40KB for a screenshot. Two clips could outweigh the entire
+rest of the site several times over.
+
+If it goes ahead: cap it at two clips, keep each under 5MB, export at 720p
+rather than 1080p, and generate a poster for each.
+
+The cheaper alternative, needing no code at all, is to use slot 6 for a video
+still and link out to the Reel on Instagram. That evidences the work at zero
+cost but sends the visitor away from the portfolio, which is why it is the
+fallback rather than the recommendation.
 
 ## Asset collection checklist
 
 Working notes for gathering screenshots. Not rendered anywhere on the site.
 
-**MilwauTea** (target 6)
+**MilwauTea** (target 6 images + 2 videos)
 
-- [ ] Logo
-- [ ] Mascot
-- [ ] Menu design
-- [ ] Social graphics
-- [ ] Promotional / giveaway design
-- [ ] Video still or CapCut timeline
-- [ ] Instagram or Facebook profile grid
+- [ ] 1. Logo
+- [ ] 2. Mascot / branding
+- [ ] 3. Menu design
+- [ ] 4. Social media graphic
+- [ ] 5. Promotional graphic / flyer
+- [ ] 6. Store or brand mockup
+- [ ] 7. Instagram Reel *(video, blocked on support)*
+- [ ] 8. Promotional video *(video, blocked on support)*
 
 **AI Content Studio** (target 5, in this order)
 
