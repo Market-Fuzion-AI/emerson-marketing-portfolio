@@ -14,7 +14,7 @@ export function Projects() {
           transition={{ duration: 0.5 }}
           className="max-w-3xl mx-auto text-center mb-16"
         >
-          <h2 className="text-primary-blue font-semibold tracking-wide uppercase text-sm mb-3">Portfolio</h2>
+          <p className="text-primary-blue font-semibold tracking-wide uppercase text-sm mb-3">Portfolio</p>
           <h1 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Selected Work</h1>
           <p className="text-lg text-slate-600 leading-relaxed">
             Four projects covering the marketing I have done in practice: brand development and campaign

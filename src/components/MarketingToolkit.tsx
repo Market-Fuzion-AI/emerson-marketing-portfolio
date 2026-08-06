@@ -46,8 +46,8 @@ export function MarketingToolkit() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="text-primary-blue font-semibold tracking-wide uppercase text-sm mb-3">Tools &amp; Platforms</h2>
-            <h3 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Marketing Toolkit</h3>
+            <p className="text-primary-blue font-semibold tracking-wide uppercase text-sm mb-3">Tools &amp; Platforms</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Marketing Toolkit</h2>
             <p className="text-lg text-slate-600 leading-relaxed">
               The tools I use day to day across content, social media, campaigns, and lead management.
             </p>
@@ -70,7 +70,7 @@ export function MarketingToolkit() {
                   <div className="w-12 h-12 bg-white text-primary-blue rounded-xl flex items-center justify-center shadow-sm border border-slate-100">
                     <Icon size={24} aria-hidden="true" />
                   </div>
-                  <h4 className="text-xl font-bold text-slate-900">{category.title}</h4>
+                  <h3 className="text-xl font-bold text-slate-900">{category.title}</h3>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

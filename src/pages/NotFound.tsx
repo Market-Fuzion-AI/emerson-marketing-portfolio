@@ -13,7 +13,7 @@ export function NotFound() {
           transition={{ duration: 0.5 }}
           className="max-w-2xl mx-auto text-center"
         >
-          <h2 className="text-primary-blue font-semibold tracking-wide uppercase text-sm mb-3">404</h2>
+          <p className="text-primary-blue font-semibold tracking-wide uppercase text-sm mb-3">404</p>
           <h1 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Page not found</h1>
           <p className="text-lg text-slate-600 leading-relaxed mb-10">
             That page doesn&rsquo;t exist. It may have been moved or removed.

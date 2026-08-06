@@ -50,8 +50,8 @@ export function Skills() {
     <section id="skills" className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="text-center mb-10">
-          <h2 className="text-primary-blue font-semibold tracking-wide uppercase text-sm mb-3">Core Skills</h2>
-          <h3 className="text-3xl md:text-4xl font-bold text-slate-900">What I Do</h3>
+          <p className="text-primary-blue font-semibold tracking-wide uppercase text-sm mb-3">Core Skills</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900">What I Do</h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -70,7 +70,7 @@ export function Skills() {
                   <Icon size={20} aria-hidden="true" />
                 </div>
                 <div>
-                  <h4 className="text-base font-bold text-slate-900 mb-1">{skill.title}</h4>
+                  <h3 className="text-base font-bold text-slate-900 mb-1">{skill.title}</h3>
                   <p className="text-slate-600 text-sm leading-relaxed">
                     {skill.description}
                   </p>

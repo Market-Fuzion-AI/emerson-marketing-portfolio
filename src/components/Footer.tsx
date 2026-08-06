@@ -6,7 +6,7 @@ const LINKEDIN = 'https://www.linkedin.com/in/emerson-alvarenga-280158248/';
 const GITHUB = 'https://github.com/Market-Fuzion-AI';
 
 const linkClass =
-  'inline-flex items-center gap-2 text-sm font-medium text-slate-300 hover:text-white transition-colors rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900';
+  'inline-flex items-center gap-2 py-1 text-sm font-medium text-slate-300 hover:text-white transition-colors rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900';
 
 /**
  * The site's single contact area. Kept deliberately concise so contact
@@ -54,7 +54,7 @@ export function Footer() {
           </nav>
         </div>
 
-        <p className="mt-10 pt-6 border-t border-slate-800 text-slate-500 text-sm">
+        <p className="mt-10 pt-6 border-t border-slate-800 text-slate-400 text-sm">
           &copy; {new Date().getFullYear()} Emerson Alvarenga
         </p>
       </div>

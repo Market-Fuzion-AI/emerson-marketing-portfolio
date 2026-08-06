@@ -3,7 +3,7 @@ import { motion } from 'motion/react';
 import type { Project } from '../types/project';
 import { ScreenshotGallery } from './ui/ScreenshotGallery';
 
-const LABEL = 'text-xs font-bold text-slate-400 uppercase tracking-wider mb-3';
+const LABEL = 'text-xs font-bold text-slate-500 uppercase tracking-wider mb-3';
 const TAG =
   'inline-flex items-center px-2.5 py-1 rounded-md bg-white border border-slate-200 text-slate-600 text-xs font-medium';
 
@@ -23,33 +23,33 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
       className="bg-slate-50 rounded-2xl p-8 md:p-10 border border-slate-200 shadow-sm hover:shadow-md transition-shadow scroll-mt-28"
     >
       {project.label && (
-        <h4 className="text-primary-blue font-semibold tracking-wide uppercase text-sm mb-3">
+        <p className="text-primary-blue font-semibold tracking-wide uppercase text-sm mb-3">
           {project.label}
-        </h4>
+        </p>
       )}
-      <h3
+      <h2
         className={`font-bold text-slate-900 mb-4 ${
           project.featured ? 'text-3xl md:text-4xl' : 'text-2xl md:text-3xl'
         }`}
       >
         {project.title}
-      </h3>
+      </h2>
       <p className="text-lg text-slate-600 leading-relaxed mb-10 max-w-3xl">{project.positioning}</p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
         <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
-          <h4 className={LABEL}>{project.challenge ? 'Business Challenge' : 'Objective'}</h4>
+          <h3 className={LABEL}>{project.challenge ? 'Business Challenge' : 'Objective'}</h3>
           <p className="text-slate-600 leading-relaxed">{project.challenge ?? project.objective}</p>
         </div>
         <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
-          <h4 className={LABEL}>My Role</h4>
+          <h3 className={LABEL}>My Role</h3>
           <p className="text-slate-600 leading-relaxed">{project.role}</p>
         </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
         <div>
-          <h4 className={LABEL}>Marketing Skills</h4>
+          <h3 className={LABEL}>Marketing Skills</h3>
           <div className="flex flex-wrap gap-2">
             {project.skills.map((skill) => (
               <span key={skill} className={TAG}>
@@ -59,7 +59,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
           </div>
         </div>
         <div>
-          <h4 className={LABEL}>Tools &amp; Platforms</h4>
+          <h3 className={LABEL}>Tools &amp; Platforms</h3>
           {project.tools.length > 0 ? (
             <div className="flex flex-wrap gap-2">
               {project.tools.map((tool) => (
@@ -76,14 +76,14 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
 
       {project.caseStudy && (
         <div className="mb-10">
-          <h4 className={LABEL}>Scope of Work</h4>
+          <h3 className={LABEL}>Scope of Work</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {project.caseStudy.map((section) => (
               <div
                 key={section.title}
                 className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm"
               >
-                <h5 className="text-base font-bold text-slate-900 mb-2">{section.title}</h5>
+                <h4 className="text-base font-bold text-slate-900 mb-2">{section.title}</h4>
                 <p className="text-sm text-slate-600 leading-relaxed mb-4">{section.body}</p>
                 <div className="flex flex-wrap gap-2">
                   {section.items.map((item) => (
@@ -100,7 +100,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
 
       {project.reflection && (
         <div className="mb-10">
-          <h4 className={LABEL}>Reflection</h4>
+          <h3 className={LABEL}>Reflection</h3>
           <div className="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
             <p className="text-slate-600 leading-relaxed">{project.reflection}</p>
           </div>
@@ -109,7 +109,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
 
       {project.approach && project.approach.length > 0 && (
         <div className="mb-10">
-          <h4 className={LABEL}>How It Works</h4>
+          <h3 className={LABEL}>How It Works</h3>
           <ol className="space-y-3">
             {project.approach.map((step, i) => (
               <li key={i} className="flex items-center gap-4">
@@ -126,7 +126,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
       )}
 
       <div className="mb-2">
-        <h4 className={LABEL}>Work Samples</h4>
+        <h3 className={LABEL}>Work Samples</h3>
         <p className="text-slate-600 leading-relaxed max-w-3xl">{project.galleryIntro}</p>
         <ScreenshotGallery images={project.images} />
       </div>

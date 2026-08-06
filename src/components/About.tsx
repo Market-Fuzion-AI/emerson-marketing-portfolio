@@ -13,7 +13,7 @@ export function About() {
             transition={{ duration: 0.5 }}
             className="text-center mb-16"
           >
-            <h2 className="text-primary-blue font-semibold tracking-wide uppercase text-sm mb-3">Background</h2>
+            <p className="text-primary-blue font-semibold tracking-wide uppercase text-sm mb-3">Background</p>
             <h1 className="text-3xl md:text-4xl font-bold text-slate-900">About Me</h1>
           </motion.div>
 
