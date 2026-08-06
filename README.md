@@ -55,10 +55,10 @@ src/
 All four projects are defined in **`src/data/projects.ts`**. Editing copy, skills, tools, or
 workflow steps means editing that one file — no component changes needed.
 
-## Adding project screenshots
+## Adding project media
 
-Everything below is the complete process. Screenshots are added by editing **one file**,
-`src/data/projects.ts`. No component ever needs changing.
+Everything below is the complete process. Images and videos are added by editing
+**one file**, `src/data/projects.ts`. No component ever needs changing.
 
 ### 1. Where files go
 
@@ -108,32 +108,102 @@ content-studio-05-images.webp
 Because thumbnails crop to 4:3 from the centre, put the important part of the image near the
 middle or crop it there yourself before exporting.
 
-### 4. Ordering
+### 4. Adding an image
 
-Display order is the order of the `images` array in `projects.ts`, not the filename. The numeric
-prefix is a convention for humans; reordering the array is what actually moves an image.
-
-### 5. Adding or replacing
-
-Add entries to the `images` array for that project:
+Gallery contents live in the `media` array for that project in
+`src/data/projects.ts`. Every entry carries an explicit `type`.
 
 ```ts
-images: [
-  { src: '/images/milwautea/milwautea-01-logo.webp', alt: 'MilwauTea logo' },
-  { src: '/images/milwautea/milwautea-02-menu.webp', alt: 'MilwauTea menu design' },
+media: [
+  { type: 'image', src: '/images/milwautea/milwautea-01-logo.webp', alt: 'MilwauTea logo in its final form' },
 ],
 ```
 
+| Field | Required | Notes |
+| --- | --- | --- |
+| `type` | yes | Must be `'image'` |
+| `src` | yes | Path under `/public`, without `public` |
+| `alt` | yes | Describes the subject. Read by screen readers and used as the lightbox label |
+
+### 5. Adding a video
+
+**Never put an `.mp4` in an image entry.** It will render as a broken image,
+not a player. Videos need `type: 'video'` and their own fields.
+
+```ts
+media: [
+  {
+    type: 'video',
+    src: '/images/milwautea/milwautea-07-reel.mp4',
+    poster: '/images/milwautea/milwautea-07-reel-poster.webp',
+    title: 'MilwauTea Instagram Reel',
+    alt: 'Short-form Instagram Reel promoting the MilwauTea launch',
+  },
+],
+```
+
+| Field | Required | Notes |
+| --- | --- | --- |
+| `type` | yes | Must be `'video'` |
+| `src` | yes | The `.mp4` |
+| `poster` | yes | A `.webp` still. It is the grid thumbnail and the frame shown before playback |
+| `title` | yes | Names the video. Becomes the thumbnail label ("Play video: …") and the lightbox label |
+| `alt` | yes | Describes the poster image |
+
+The type system enforces this. A video entry missing its `poster` or `title`
+fails the type check rather than shipping broken.
+
+**Poster images are not optional.** Without one the thumbnail is blank, and
+the grid would have to download video data just to draw a frame.
+
+#### Video encoding
+
+| | |
+| --- | --- |
+| **Container / codecs** | MP4 with H.264 video and AAC audio |
+| **Resolution** | 720p preferred. 1080p is rarely worth the extra weight at gallery size |
+| **File size** | 5 MB maximum per video |
+| **Count** | Two videos maximum for MilwauTea. No other project has video slots |
+| **Poster** | One `.webp` per video, same naming plus `-poster` |
+
+For scale: the profile photo is 38 KB and a screenshot is roughly 40 KB. A
+single careless video can outweigh the rest of the site many times over, so
+the 5 MB ceiling matters.
+
+#### Playback behaviour
+
+- `preload="none"`, so the file is only fetched once the lightbox opens.
+  Browsing the page costs nothing.
+- No autoplay, no loop, no muted background playback.
+- Native `controls`, so playback works with the visitor's own accessibility
+  settings rather than a custom player.
+- `playsInline`, so iOS plays in place instead of going fullscreen.
+
+#### Accessibility
+
+- Thumbnails are buttons. Enter and Space both activate them.
+- A video thumbnail announces as "Play video: {title}", so it is clear that
+  activating it starts a video rather than opening an image.
+- The poster `<img>` inside a video thumbnail has an empty `alt`, so screen
+  readers announce the button label once rather than twice.
+- Inside the lightbox, Tab and Shift+Tab cycle between the video controls and
+  the Close button. Escape closes and returns focus to the thumbnail.
+- The focus trap queries focusable elements at runtime, so it adapts to the
+  extra control a video adds. Do not replace it with a fixed list.
+
+### 6. Ordering and replacing
+
+Display order is the order of the `media` array, not the filename. The
+numeric prefix is a convention for humans; reordering the array is what moves
+an item.
+
 - **To add**, drop the file in the project directory and append an entry.
-- **To replace**, overwrite the file and update the `alt` if the subject changed. If the filename
-  changes, update the `src` too.
-- **To remove**, delete the array entry and the file. An empty array is valid and renders neutral
-  empty frames.
+- **To replace**, overwrite the file and update `alt` or `title` if the
+  subject changed. If the filename changes, update `src` (and `poster`).
+- **To remove**, delete the entry and the file. An empty array is valid and
+  renders neutral empty frames.
 
-Every image needs a descriptive `alt`. It is read by screen readers and used as the lightbox
-label, so describe the subject rather than writing "screenshot".
-
-### 6. Recommended count per project
+### 7. Recommended count per project
 
 | Project | Images | Videos | Why |
 | --- | ---: | ---: | --- |
@@ -157,61 +227,6 @@ Eighteen images plus two videos. Resist adding more.
 | 7 | Instagram Reel | `milwautea-07-reel.mp4` (video, see below) |
 | 8 | Promotional video | `milwautea-08-promo-video.mp4` (video, see below) |
 
-## Video support
-
-**Not implemented. Do not add video files yet.**
-
-The gallery renders images only. `ProjectImage` is `{ src, alt }`, the
-thumbnail is an `<img>`, and the lightbox is an `<img>`. Putting an `.mp4` in
-an `images` array produces a broken image icon, not a player.
-
-Slots 7 and 8 above are reserved for when support is added. Until then,
-MilwauTea ships six images and the Video Production claim on its card has no
-visual evidence behind it.
-
-### What adding support would take
-
-Three files, roughly 40 lines:
-
-1. **`src/types/project.ts`** — add an optional `poster?: string` to
-   `ProjectImage`. Its presence marks the entry as a video, so no separate
-   type or discriminated union is needed.
-2. **`src/components/ui/ScreenshotGallery.tsx`** — when `poster` is set,
-   render the poster as the thumbnail with a small play badge over it. Using
-   a poster image rather than a `<video>` element keeps the grid cheap to
-   load.
-3. **`src/components/ui/Lightbox.tsx`** — when `poster` is set, render
-   `<video controls playsInline>` instead of `<img>`.
-
-The one subtlety is in the lightbox. Its focus trap currently keeps Tab on
-the close button, because that is the only focusable element inside. Video
-controls are focusable, so that trap has to be relaxed to cycle between the
-video and the close button instead of pinning focus.
-
-Every video also needs a poster image, or the thumbnail will be blank until
-the file loads.
-
-### Whether it is worth doing
-
-Probably yes, but only for one or two short clips.
-
-The case for it: MilwauTea's card claims Video Production as a skill and
-short-form video as a deliverable. Without playable video that claim rests on
-the copy alone, and it is the only skill on the page with no way to show it.
-
-The case against: video files are far heavier than anything else on the site.
-A thirty second reel is commonly 5 to 20MB, against 38KB for the profile
-photo and roughly 40KB for a screenshot. Two clips could outweigh the entire
-rest of the site several times over.
-
-If it goes ahead: cap it at two clips, keep each under 5MB, export at 720p
-rather than 1080p, and generate a poster for each.
-
-The cheaper alternative, needing no code at all, is to use slot 6 for a video
-still and link out to the Reel on Instagram. That evidences the work at zero
-cost but sends the visitor away from the portfolio, which is why it is the
-fallback rather than the recommendation.
-
 ## Asset collection checklist
 
 Working notes for gathering screenshots. Not rendered anywhere on the site.
@@ -224,8 +239,8 @@ Working notes for gathering screenshots. Not rendered anywhere on the site.
 - [ ] 4. Social media graphic
 - [ ] 5. Promotional graphic / flyer
 - [ ] 6. Store or brand mockup
-- [ ] 7. Instagram Reel *(video, blocked on support)*
-- [ ] 8. Promotional video *(video, blocked on support)*
+- [ ] 7. Instagram Reel *(video + poster)*
+- [ ] 8. Promotional video *(video + poster)*
 
 **AI Content Studio** (target 5, in this order)
 

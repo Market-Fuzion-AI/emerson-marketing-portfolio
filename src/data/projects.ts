@@ -56,17 +56,32 @@ export const projects: Project[] = [
     galleryIntro:
       'Examples of the branding, marketing assets, and promotional work created during the launch.',
     // Planned gallery, in storytelling order. Add the file to
-    // public/images/milwautea/ then uncomment its line.
-    images: [
-      // { src: '/images/milwautea/milwautea-01-logo.webp', alt: 'MilwauTea logo in its final form' },
-      // { src: '/images/milwautea/milwautea-02-mascot.webp', alt: 'MilwauTea mascot character used across the brand' },
-      // { src: '/images/milwautea/milwautea-03-menu.webp', alt: 'MilwauTea drink menu laid out for in-store display' },
-      // { src: '/images/milwautea/milwautea-04-social.webp', alt: 'MilwauTea Instagram feed showing the launch content' },
-      // { src: '/images/milwautea/milwautea-05-promo.webp', alt: 'MilwauTea promotional graphic for a launch offer' },
-      // { src: '/images/milwautea/milwautea-06-mockup.webp', alt: 'MilwauTea branding shown on a store mockup' },
+    // public/images/milwautea/ then uncomment its line. See README.
+    media: [
+      // { type: 'image', src: '/images/milwautea/milwautea-01-logo.webp', alt: 'MilwauTea logo in its final form' },
+      // { type: 'image', src: '/images/milwautea/milwautea-02-mascot.webp', alt: 'MilwauTea mascot character used across the brand' },
+      // { type: 'image', src: '/images/milwautea/milwautea-03-menu.webp', alt: 'MilwauTea drink menu laid out for in-store display' },
+      // { type: 'image', src: '/images/milwautea/milwautea-04-social.webp', alt: 'MilwauTea Instagram feed showing the launch content' },
+      // { type: 'image', src: '/images/milwautea/milwautea-05-promo.webp', alt: 'MilwauTea promotional graphic for a launch offer' },
+      // { type: 'image', src: '/images/milwautea/milwautea-06-mockup.webp', alt: 'MilwauTea branding shown on a store mockup' },
+      //
+      // Videos. Each needs its .mp4 and its .webp poster in place before the
+      // line is uncommented. See README, "Adding a video".
+      // {
+      //   type: 'video',
+      //   src: '/images/milwautea/milwautea-07-reel.mp4',
+      //   poster: '/images/milwautea/milwautea-07-reel-poster.webp',
+      //   title: 'MilwauTea Instagram Reel',
+      //   alt: 'Short-form Instagram Reel promoting the MilwauTea launch',
+      // },
+      // {
+      //   type: 'video',
+      //   src: '/images/milwautea/milwautea-08-promo-video.mp4',
+      //   poster: '/images/milwautea/milwautea-08-promo-video-poster.webp',
+      //   title: 'MilwauTea promotional video',
+      //   alt: 'Promotional video introducing the MilwauTea shop',
+      // },
     ],
-    // Videos 07 (Instagram Reel) and 08 (promotional video) are planned but the
-    // gallery renders images only. See README, "Video support", before adding them.
   },
   {
     id: 'instagram-dm-automation',
@@ -96,20 +111,24 @@ export const projects: Project[] = [
       'Examples of the automation workflow and lead journey, from Instagram engagement through follow-up.',
     // PROVISIONAL: pre-existing files surfaced for visual review only, pending
     // approval. Not yet confirmed as evidence for this project.
-    images: [
+    media: [
       {
+        type: 'image',
         src: '/images/make-automation/automation-1.png',
         alt: 'Make.com scenario connecting a custom webhook to OpenAI and a Slack message',
       },
       {
+        type: 'image',
         src: '/images/make-automation/automation-2.png',
         alt: 'Make.com scenario sending a webhook payload through OpenAI to Slack',
       },
       {
+        type: 'image',
         src: '/images/slack/slack-1.png',
         alt: 'Automated daily report delivered to a Slack channel',
       },
       {
+        type: 'image',
         src: '/images/slack/slack-2.png',
         alt: 'AI-generated social media post draft delivered to Slack, showing concept, hook, caption and call to action',
       },
@@ -143,10 +162,10 @@ export const projects: Project[] = [
       'Examples of the lead qualification workflow, CRM organization, and outreach pipeline.',
     // Planned gallery, in storytelling order. Add the file to
     // public/images/prospecting-command-center/ then uncomment its line.
-    images: [
-      // { src: '/images/prospecting-command-center/prospecting-01-research.webp', alt: 'Prospect research view listing local businesses to evaluate' },
-      // { src: '/images/prospecting-command-center/prospecting-02-qualification.webp', alt: 'Lead scoring view with qualification criteria applied' },
-      // { src: '/images/prospecting-command-center/prospecting-03-pipeline.webp', alt: 'Deal pipeline showing leads at each follow-up stage' },
+    media: [
+      // { type: 'image', src: '/images/prospecting-command-center/prospecting-01-research.webp', alt: 'Prospect research view listing local businesses to evaluate' },
+      // { type: 'image', src: '/images/prospecting-command-center/prospecting-02-qualification.webp', alt: 'Lead scoring view with qualification criteria applied' },
+      // { type: 'image', src: '/images/prospecting-command-center/prospecting-03-pipeline.webp', alt: 'Deal pipeline showing leads at each follow-up stage' },
     ],
   },
   {
@@ -177,12 +196,12 @@ export const projects: Project[] = [
       'Examples of the research, planning, scripting, and content production workflow.',
     // Planned gallery, in storytelling order. Add the file to
     // public/images/ai-content-studio/ then uncomment its line.
-    images: [
-      // { src: '/images/ai-content-studio/content-studio-01-research.webp', alt: 'Topic research gathering subjects worth covering' },
-      // { src: '/images/ai-content-studio/content-studio-02-ideas.webp', alt: 'Content ideas developed from the research' },
-      // { src: '/images/ai-content-studio/content-studio-03-hooks.webp', alt: 'Hook options written for the chosen idea' },
-      // { src: '/images/ai-content-studio/content-studio-04-script.webp', alt: 'Script drafted for a short-form video' },
-      // { src: '/images/ai-content-studio/content-studio-05-images.webp', alt: 'Generated image created to support the post' },
+    media: [
+      // { type: 'image', src: '/images/ai-content-studio/content-studio-01-research.webp', alt: 'Topic research gathering subjects worth covering' },
+      // { type: 'image', src: '/images/ai-content-studio/content-studio-02-ideas.webp', alt: 'Content ideas developed from the research' },
+      // { type: 'image', src: '/images/ai-content-studio/content-studio-03-hooks.webp', alt: 'Hook options written for the chosen idea' },
+      // { type: 'image', src: '/images/ai-content-studio/content-studio-04-script.webp', alt: 'Script drafted for a short-form video' },
+      // { type: 'image', src: '/images/ai-content-studio/content-studio-05-images.webp', alt: 'Generated image created to support the post' },
     ],
   },
 ];

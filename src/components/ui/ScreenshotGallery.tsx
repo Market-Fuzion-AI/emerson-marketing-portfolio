@@ -1,34 +1,36 @@
 import React, { useCallback, useState } from 'react';
-import { ImageIcon } from 'lucide-react';
-import type { ProjectImage } from '../../types/project';
+import { ImageIcon, Play } from 'lucide-react';
+import type { ProjectMedia } from '../../types/project';
 import { Lightbox } from './Lightbox';
 
 type ScreenshotGalleryProps = {
-  images: ProjectImage[];
-  /** Number of empty frames to hold the layout before images are added. */
+  media: ProjectMedia[];
+  /** Number of empty frames to hold the layout before media is added. */
   placeholderCount?: number;
 };
 
 const GRID = 'grid grid-cols-2 sm:grid-cols-3 gap-3 mt-6';
-const TILE = 'aspect-[4/3] w-full rounded-lg border border-slate-200 shadow-sm';
+const TILE = 'relative aspect-[4/3] w-full rounded-lg border border-slate-200 shadow-sm';
 
 /**
- * A grid of project screenshots, each opening in a shared Lightbox.
+ * A grid of project media, each opening in a shared Lightbox.
  *
- * Thumbnails are real buttons so they can be reached and activated by
- * keyboard. Two across on phones and three from the small breakpoint up,
- * which keeps thumbnails legible on a narrow screen without changing the
- * tablet or desktop layout.
+ * Images and videos may be mixed in one array. A video is represented in the
+ * grid by its poster image plus a play indicator, so the grid never downloads
+ * video data; the file is only fetched once the lightbox opens.
  *
- * With no images the grid renders neutral empty frames that hold the same
- * space the screenshots will occupy. They disappear the moment the project's
- * `images` array is populated. No component change is needed to add images.
+ * Thumbnails are real buttons, so Enter and Space activate them and they can
+ * be reached by keyboard. Two across on phones and three from the small
+ * breakpoint up.
+ *
+ * With no media the grid renders neutral empty frames that hold the same
+ * space the screenshots will occupy.
  */
-export function ScreenshotGallery({ images, placeholderCount = 3 }: ScreenshotGalleryProps) {
-  const [selectedImage, setSelectedImage] = useState<ProjectImage | null>(null);
-  const closeLightbox = useCallback(() => setSelectedImage(null), []);
+export function ScreenshotGallery({ media, placeholderCount = 3 }: ScreenshotGalleryProps) {
+  const [selected, setSelected] = useState<ProjectMedia | null>(null);
+  const closeLightbox = useCallback(() => setSelected(null), []);
 
-  if (images.length === 0) {
+  if (media.length === 0) {
     return (
       <div className={GRID} aria-hidden="true">
         {Array.from({ length: placeholderCount }).map((_, i) => (
@@ -43,20 +45,34 @@ export function ScreenshotGallery({ images, placeholderCount = 3 }: ScreenshotGa
   return (
     <>
       <div className={GRID}>
-        {images.map((image) => (
+        {media.map((item) => (
           <button
-            key={image.src}
+            key={item.src}
             type="button"
-            onClick={() => setSelectedImage(image)}
-            aria-label={`View larger: ${image.alt}`}
+            onClick={() => setSelected(item)}
+            aria-label={
+              item.type === 'video' ? `Play video: ${item.title}` : `View larger: ${item.alt}`
+            }
             className={`${TILE} group overflow-hidden cursor-zoom-in transition-opacity hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-blue focus-visible:ring-offset-2`}
           >
-            <img src={image.src} alt={image.alt} loading="lazy" className="w-full h-full object-cover" />
+            <img
+              src={item.type === 'video' ? item.poster : item.src}
+              alt={item.type === 'video' ? '' : item.alt}
+              loading="lazy"
+              className="w-full h-full object-cover"
+            />
+            {item.type === 'video' && (
+              <span className="absolute inset-0 flex items-center justify-center" aria-hidden="true">
+                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-900/70 text-white shadow-sm">
+                  <Play size={16} fill="currentColor" className="ml-0.5" />
+                </span>
+              </span>
+            )}
           </button>
         ))}
       </div>
 
-      <Lightbox image={selectedImage} onClose={closeLightbox} />
+      <Lightbox media={selected} onClose={closeLightbox} />
     </>
   );
 }
