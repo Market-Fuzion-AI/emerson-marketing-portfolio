@@ -28,7 +28,7 @@ export function About() {
             >
               <div className="w-64 h-64 bg-white rounded-full border-4 border-slate-50 shadow-xl overflow-hidden">
                 <img
-                  src="/images/profile-photo/profile-pic.jpg"
+                  src="/images/profile-photo/profile-pic.webp"
                   alt="Emerson Alvarenga"
                   width={256}
                   height={256}
