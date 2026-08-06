@@ -47,17 +47,21 @@ export function About() {
             >
               <div className="text-lg text-slate-600 space-y-6 leading-relaxed mb-10">
                 <p>
-                  Hi, I&rsquo;m Emerson &mdash; a digital marketer focused on content, social media, and campaign
-                  execution.
+                  Hi, I&rsquo;m Emerson. I&rsquo;m an early-career digital marketer working across content, social
+                  media, and brand marketing. Most of what I know came from launching a local business and
+                  handling the marketing that went with it.
                 </p>
                 <p>
-                  My work covers the practical side of marketing: researching and producing content, running
-                  promotional campaigns, growing an audience organically, and managing leads from first contact
-                  through follow-up.
+                  That launch covered brand development and visual identity, content production, and campaign
+                  execution. Separately, I have built the CRM pipelines and marketing automation that handle lead
+                  generation and follow-up. Working on both taught me how much the creative side depends on having
+                  something organized behind it.
                 </p>
                 <p>
-                  I also use automation and AI-assisted workflows to support that work &mdash; not as the point of
-                  it, but to remove repetitive steps and keep campaigns running consistently.
+                  AI is part of how I work rather than what I do. I use ChatGPT and Claude the same way I use Canva
+                  or Make, to move faster and keep quality consistent, while the marketing judgment stays mine. I
+                  work well on a team and I am still learning. Analytics and reporting are where most of that effort
+                  goes right now.
                 </p>
               </div>
             </motion.div>

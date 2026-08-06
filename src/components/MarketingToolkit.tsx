@@ -1,27 +1,37 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { PenLine, Share2, Workflow, BarChart3 } from 'lucide-react';
+import { Palette, Share2, Workflow, Users, Sparkles, BarChart3 } from 'lucide-react';
 
 const categories = [
   {
-    title: 'Content & Creative',
-    icon: PenLine,
-    items: ['Content Marketing', 'Copywriting', 'Content Production', 'Video Production', 'Branding', 'Canva']
+    title: 'Content & Design',
+    icon: Palette,
+    items: ['Canva', 'Adobe Express', 'CapCut', 'Google Docs']
   },
   {
-    title: 'Social & Community',
+    title: 'Social Media',
     icon: Share2,
-    items: ['Social Media Marketing', 'Community Marketing', 'Organic Growth', 'Instagram']
+    items: ['Instagram', 'Facebook', 'Meta Business Suite', 'Metricool']
   },
   {
-    title: 'Automation & CRM',
+    title: 'Marketing Automation',
     icon: Workflow,
-    items: ['Marketing Automation', 'Lead Management', 'CRM', 'Make.com', 'ManyChat', 'Slack']
+    items: ['Make.com', 'ManyChat', 'Slack']
   },
   {
-    title: 'Strategy & Measurement',
+    title: 'CRM & Lead Management',
+    icon: Users,
+    items: ['HubSpot CRM', 'Google Sheets']
+  },
+  {
+    title: 'AI Tools',
+    icon: Sparkles,
+    items: ['ChatGPT', 'Claude']
+  },
+  {
+    title: 'Analytics & Productivity',
     icon: BarChart3,
-    items: ['Campaign Management', 'Email Marketing', 'SEO', 'Analytics & Reporting', 'AI-Assisted Marketing']
+    items: ['Google Analytics', 'Google Workspace', 'Microsoft Office']
   }
 ];
 
@@ -36,10 +46,10 @@ export function MarketingToolkit() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="text-primary-blue font-semibold tracking-wide uppercase text-sm mb-3">Skills &amp; Tools</h2>
+            <h2 className="text-primary-blue font-semibold tracking-wide uppercase text-sm mb-3">Tools &amp; Platforms</h2>
             <h3 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Marketing Toolkit</h3>
             <p className="text-lg text-slate-600 leading-relaxed">
-              The skills and platforms I work with across content, social, campaigns, and lead management.
+              The tools I use day to day across content, social media, campaigns, and lead management.
             </p>
           </motion.div>
         </div>
