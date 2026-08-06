@@ -22,25 +22,27 @@ export function Hero() {
           >
             <div className="inline-flex items-center px-3 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-primary-blue text-sm font-semibold mb-6">
               <span className="flex h-2 w-2 rounded-full bg-primary-blue mr-2"></span>
-              Available for new projects
+              Open to digital marketing roles
             </div>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-slate-900 leading-[1.1] mb-6">
-              Emerson <br />
+              Emerson Alvarenga <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-blue to-electric-teal">
-                AI Automation Engineer
+                Digital Marketing Specialist
               </span>
             </h1>
             <p className="text-lg md:text-xl text-slate-600 mb-10 leading-relaxed max-w-2xl mx-auto">
-              I build intelligent, scalable AI-powered automation systems that eliminate manual work and accelerate business growth.
+              I work across content marketing, social media, and campaign execution, with a focus on turning
+              attention into leads. My experience includes launching a local brand from the ground up and
+              building CRM and automation workflows that support lead capture and follow-up.
             </p>
-            
+
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
                 to="/projects"
                 className="w-full sm:w-auto inline-flex justify-center items-center px-8 py-4 bg-primary-blue text-white font-medium rounded-xl hover:bg-blue-700 transition-all shadow-lg shadow-blue-500/25"
               >
-                View Vector Case Study
-                <ArrowRight className="ml-2 h-5 w-5" />
+                View Case Studies
+                <ArrowRight className="ml-2 h-5 w-5" aria-hidden="true" />
               </Link>
               <a
                 href="https://www.linkedin.com/in/emerson-alvarenga-280158248/"
@@ -48,7 +50,7 @@ export function Hero() {
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto inline-flex justify-center items-center px-8 py-4 bg-white text-slate-700 font-medium rounded-xl border border-slate-200 hover:border-slate-300 hover:bg-slate-50 transition-all"
               >
-                <Linkedin className="mr-2 h-5 w-5 text-[#0A66C2]" />
+                <Linkedin className="mr-2 h-5 w-5 text-[#0A66C2]" aria-hidden="true" />
                 LinkedIn
               </a>
             </div>

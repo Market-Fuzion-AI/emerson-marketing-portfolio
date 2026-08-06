@@ -1,47 +1,47 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Cpu, GitBranch, Webhook, Bot, Database, Zap, Server, Layers } from 'lucide-react';
+import { PenLine, Share2, Palette, Megaphone, Users, Workflow, Mail, BarChart3 } from 'lucide-react';
 
 const skills = [
   {
-    icon: Cpu,
-    title: 'AI Automation Systems',
-    description: 'Designing AI-powered automation workflows that connect applications and external services.'
+    icon: PenLine,
+    title: 'Content Marketing',
+    description: 'Topic and SEO research through to finished posts, built around what an audience is already looking for.'
   },
   {
-    icon: GitBranch,
-    title: 'Automation Workflow Design',
-    description: 'Creating event-driven pipelines triggered by user actions and webhook events.'
+    icon: Share2,
+    title: 'Social Media Marketing',
+    description: 'Planning, producing, and scheduling social content designed to build consistent engagement and organic audience growth.'
   },
   {
-    icon: Webhook,
-    title: 'Webhook Architecture',
-    description: 'Connecting applications with external automation platforms using webhook triggers.'
+    icon: Palette,
+    title: 'Brand Marketing',
+    description: 'Brand identity, voice, and visual assets that keep a business looking consistent everywhere customers find it.'
   },
   {
-    icon: Bot,
-    title: 'AI API Integration',
-    description: 'Integrating OpenAI models for text and image generation inside production workflows.'
+    icon: Megaphone,
+    title: 'Campaign Management',
+    description: 'Planning promotional campaigns from initial concept through launch, then reviewing performance to identify what should be improved or repeated.'
   },
   {
-    icon: Database,
-    title: 'Cloud Infrastructure',
-    description: 'Building backend systems using Firebase Authentication, Firestore, and Storage.'
+    icon: Users,
+    title: 'Lead Generation & Nurturing',
+    description: 'Turning engagement into real conversations, then following up on a schedule so interest does not cool off.'
   },
   {
-    icon: Zap,
-    title: 'Event-Driven Systems',
-    description: 'Designing systems where application events trigger automated processes.'
+    icon: Workflow,
+    title: 'CRM & Marketing Automation',
+    description: 'Pipelines and automated workflows that route, track, and follow up on leads without manual chasing.'
   },
   {
-    icon: Server,
-    title: 'Secure API Architecture',
-    description: 'Protecting API keys and requests using Cloud Functions as a secure proxy.'
+    icon: Mail,
+    title: 'Email & Outreach',
+    description: 'Outreach and follow-up sequences written to earn a reply, not just to fill an inbox.'
   },
   {
-    icon: Layers,
-    title: 'Full Stack Development',
-    description: 'Building complete applications across frontend UI, backend services, and automation layers.'
+    icon: BarChart3,
+    title: 'Analytics & Reporting',
+    description: 'Pulling performance data into clear reports, so decisions come from more than a hunch.'
   }
 ];
 
@@ -50,10 +50,10 @@ export function Skills() {
     <section id="skills" className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="text-center mb-10">
-          <h2 className="text-primary-blue font-semibold tracking-wide uppercase text-sm mb-3">Expertise</h2>
-          <h3 className="text-3xl md:text-4xl font-bold text-slate-900">Skills Demonstrated</h3>
+          <p className="text-primary-blue font-semibold tracking-wide uppercase text-sm mb-3">Core Skills</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900">What I Do</h2>
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {skills.map((skill, index) => {
             const Icon = skill.icon;
@@ -67,10 +67,10 @@ export function Skills() {
                 className="bg-white p-5 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow flex items-start gap-4 text-left"
               >
                 <div className="w-10 h-10 shrink-0 bg-blue-50 text-primary-blue rounded-lg flex items-center justify-center">
-                  <Icon size={20} />
+                  <Icon size={20} aria-hidden="true" />
                 </div>
                 <div>
-                  <h4 className="text-base font-bold text-slate-900 mb-1">{skill.title}</h4>
+                  <h3 className="text-base font-bold text-slate-900 mb-1">{skill.title}</h3>
                   <p className="text-slate-600 text-sm leading-relaxed">
                     {skill.description}
                   </p>

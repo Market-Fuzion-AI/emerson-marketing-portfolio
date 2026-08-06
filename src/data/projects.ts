@@ -1,0 +1,207 @@
+import type { Project } from '../types/project';
+
+/**
+ * The four portfolio pieces, in the order they appear on the Projects page.
+ *
+ * Order is deliberate: the MilwauTea case study leads, the Instagram funnel
+ * follows as the featured automation work, and the two remaining systems
+ * projects sit below them.
+ *
+ * These are structural placeholders. Screenshots, outcomes and metrics are
+ * intentionally absent until real evidence is added. See the README for how
+ * to drop images into public/images/<project-id>/.
+ */
+export const projects: Project[] = [
+  {
+    id: 'milwautea',
+    title: 'MilwauTea Marketing Case Study',
+    label: 'Featured Case Study',
+    featured: true,
+    positioning:
+      'The launch of a new bubble tea shop, covering brand identity, creative assets, and the content that introduced it locally.',
+    challenge:
+      'MilwauTea was a brand new bubble tea shop opening in a local market. It had no brand identity and no social media presence to build on. My job was to create the brand and launch it publicly, through creative assets, marketing, and community engagement.',
+    role:
+      'Responsible for the brand, the creative work, and everything published before and after opening.',
+    skills: [
+      'Branding',
+      'Graphic Design',
+      'Social Media Marketing',
+      'Content Production',
+      'Video Production',
+      'Community Marketing',
+      'Promotional Campaigns',
+      'Organic Social',
+    ],
+    tools: ['Canva', 'Instagram', 'Facebook', 'Meta Business Suite', 'CapCut'],
+    caseStudy: [
+      {
+        title: 'Brand Development',
+        body: 'Created the identity the shop needed before opening.',
+        items: ['Brand strategy', 'Logo', 'Mascot', 'Visual identity'],
+      },
+      {
+        title: 'Marketing Execution',
+        body: 'Handled the day-to-day marketing during the launch.',
+        items: ['Social content', 'Launch promotions', 'Giveaways', 'Local community outreach'],
+      },
+      {
+        title: 'Creative Production',
+        body: 'Produced the printed and digital assets campaigns ran on.',
+        items: ['Menus', 'In-store print', 'Promo graphics', 'Short-form video'],
+      },
+    ],
+    reflection:
+      'This was the first time I owned marketing for a real business rather than a personal project. The fixed opening date was the useful constraint: it forced me to decide what needed to exist, then publish consistently instead of polishing one asset. It is the work I point to when I want to show I can carry a launch.',
+    galleryIntro:
+      'Examples of the branding, marketing assets, and promotional work created during the launch.',
+    // Planned gallery, in storytelling order. Add the file to
+    // public/images/milwautea/ then uncomment its line. See README.
+    media: [
+      // { type: 'image', src: '/images/milwautea/milwautea-01-logo.webp', alt: 'MilwauTea logo in its final form' },
+      // { type: 'image', src: '/images/milwautea/milwautea-02-mascot.webp', alt: 'MilwauTea mascot character used across the brand' },
+      // { type: 'image', src: '/images/milwautea/milwautea-03-menu.webp', alt: 'MilwauTea drink menu laid out for in-store display' },
+      // { type: 'image', src: '/images/milwautea/milwautea-04-social.webp', alt: 'MilwauTea Instagram feed showing the launch content' },
+      // { type: 'image', src: '/images/milwautea/milwautea-05-promo.webp', alt: 'MilwauTea promotional graphic for a launch offer' },
+      // { type: 'image', src: '/images/milwautea/milwautea-06-mockup.webp', alt: 'MilwauTea branding shown on a store mockup' },
+      //
+      // Videos. Each needs its .mp4 and its .webp poster in place before the
+      // line is uncommented. See README, "Adding a video".
+      // {
+      //   type: 'video',
+      //   src: '/images/milwautea/milwautea-07-reel.mp4',
+      //   poster: '/images/milwautea/milwautea-07-reel-poster.webp',
+      //   title: 'MilwauTea Instagram Reel',
+      //   alt: 'Short-form Instagram Reel promoting the MilwauTea launch',
+      // },
+      // {
+      //   type: 'video',
+      //   src: '/images/milwautea/milwautea-08-promo-video.mp4',
+      //   poster: '/images/milwautea/milwautea-08-promo-video-poster.webp',
+      //   title: 'MilwauTea promotional video',
+      //   alt: 'Promotional video introducing the MilwauTea shop',
+      // },
+    ],
+  },
+  {
+    id: 'instagram-dm-automation',
+    title: 'Instagram DM Automation Funnel',
+    label: 'Featured Automation Project',
+    positioning:
+      'A lead funnel that turns Instagram comments into direct conversations.',
+    challenge:
+      'Engagement on social posts usually goes to waste because nobody follows up in time. The funnel starts the conversation while the interest is live, then gets the lead to someone who can act on it.',
+    role:
+      'Designed the funnel, the qualifying questions, and the follow-up logic behind it.',
+    skills: [
+      'Marketing Automation',
+      'Social Media Marketing',
+      'Lead Generation',
+      'Funnel Design',
+      'Campaign Management',
+    ],
+    tools: ['Instagram', 'ManyChat', 'Make.com', 'Slack'],
+    approach: [
+      'A comment on a post starts a direct message',
+      'The conversation qualifies the lead before anyone spends time',
+      'Qualified leads go to the right person, ready to be picked up',
+      'Quiet leads get a follow-up instead of being forgotten',
+    ],
+    galleryIntro:
+      'Examples of the automation workflow and lead journey, from Instagram engagement through follow-up.',
+    // PROVISIONAL: pre-existing files surfaced for visual review only, pending
+    // approval. Not yet confirmed as evidence for this project.
+    media: [
+      {
+        type: 'image',
+        src: '/images/make-automation/automation-1.png',
+        alt: 'Make.com scenario connecting a custom webhook to OpenAI and a Slack message',
+      },
+      {
+        type: 'image',
+        src: '/images/make-automation/automation-2.png',
+        alt: 'Make.com scenario sending a webhook payload through OpenAI to Slack',
+      },
+      {
+        type: 'image',
+        src: '/images/slack/slack-1.png',
+        alt: 'Automated daily report delivered to a Slack channel',
+      },
+      {
+        type: 'image',
+        src: '/images/slack/slack-2.png',
+        alt: 'AI-generated social media post draft delivered to Slack, showing concept, hook, caption and call to action',
+      },
+    ],
+  },
+  {
+    id: 'prospecting-command-center',
+    title: 'Prospecting Command Center',
+    positioning:
+      'A CRM pipeline for finding local business leads, qualifying them, and keeping outreach organized.',
+    objective:
+      'Replace scattered prospecting with one pipeline, so no lead is tracked by memory or dropped halfway through.',
+    role:
+      'Set the qualification criteria and the stages a lead moves through.',
+    skills: [
+      'Lead Management',
+      'CRM',
+      'Lead Qualification',
+      'Outreach Strategy',
+      'Campaign Management',
+      'Marketing Automation',
+    ],
+    tools: ['Google Sheets', 'Google Docs', 'Make.com', 'Slack', 'ChatGPT'],
+    approach: [
+      'Research local businesses and score them against qualification criteria',
+      'Prepare tailored outreach for the ones worth contacting',
+      'Follow up on a schedule rather than ad hoc',
+      'Move qualified leads through deal stages, and archive the rest',
+    ],
+    galleryIntro:
+      'Examples of the lead qualification workflow, CRM organization, and outreach pipeline.',
+    // Planned gallery, in storytelling order. Add the file to
+    // public/images/prospecting-command-center/ then uncomment its line.
+    media: [
+      // { type: 'image', src: '/images/prospecting-command-center/prospecting-01-research.webp', alt: 'Prospect research view listing local businesses to evaluate' },
+      // { type: 'image', src: '/images/prospecting-command-center/prospecting-02-qualification.webp', alt: 'Lead scoring view with qualification criteria applied' },
+      // { type: 'image', src: '/images/prospecting-command-center/prospecting-03-pipeline.webp', alt: 'Deal pipeline showing leads at each follow-up stage' },
+    ],
+  },
+  {
+    id: 'ai-content-studio',
+    title: 'AI Content Studio',
+    positioning:
+      'A repeatable content workflow that uses AI to get from idea to finished post.',
+    objective:
+      'Make content production repeatable, so publishing does not depend on starting from a blank page each time.',
+    role:
+      'Mapped the workflow and what each stage should produce.',
+    skills: [
+      'Content Marketing',
+      'Content Production',
+      'Copywriting',
+      'Social Media Marketing',
+      'AI-Assisted Marketing',
+      'Content Strategy',
+    ],
+    tools: ['ChatGPT', 'Claude', 'Canva', 'Google Docs'],
+    approach: [
+      'Research topics worth covering',
+      'Develop ideas into angles and hooks',
+      'Draft scripts for long and short-form',
+      'Create supporting images, with video planned next',
+    ],
+    galleryIntro:
+      'Examples of the research, planning, scripting, and content production workflow.',
+    // Planned gallery, in storytelling order. Add the file to
+    // public/images/ai-content-studio/ then uncomment its line.
+    media: [
+      // { type: 'image', src: '/images/ai-content-studio/content-studio-01-research.webp', alt: 'Topic research gathering subjects worth covering' },
+      // { type: 'image', src: '/images/ai-content-studio/content-studio-02-ideas.webp', alt: 'Content ideas developed from the research' },
+      // { type: 'image', src: '/images/ai-content-studio/content-studio-03-hooks.webp', alt: 'Hook options written for the chosen idea' },
+      // { type: 'image', src: '/images/ai-content-studio/content-studio-04-script.webp', alt: 'Script drafted for a short-form video' },
+      // { type: 'image', src: '/images/ai-content-studio/content-studio-05-images.webp', alt: 'Generated image created to support the post' },
+    ],
+  },
+];
