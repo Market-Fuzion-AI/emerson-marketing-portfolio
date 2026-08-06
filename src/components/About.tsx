@@ -47,9 +47,8 @@ export function About() {
             >
               <div className="text-lg text-slate-600 space-y-6 leading-relaxed mb-10">
                 <p>
-                  Hi, I&rsquo;m Emerson. I&rsquo;m an early-career digital marketer working across content, social
-                  media, and brand marketing. Most of what I know came from launching a local business and
-                  handling the marketing that went with it.
+                  Hi, I&rsquo;m Emerson. I&rsquo;m an early-career digital marketer, and most of what I know came
+                  from launching a local business and handling the marketing that went with it.
                 </p>
                 <p>
                   That launch covered brand development and visual identity, content production, and campaign
@@ -59,7 +58,8 @@ export function About() {
                 </p>
                 <p>
                   AI is part of how I work rather than what I do. I use ChatGPT and Claude the same way I use Canva
-                  or Make, to move faster and keep quality consistent, while the marketing judgment stays mine. I
+                  or Make.com, to move faster and keep quality consistent, while the marketing judgment stays mine.
+                  I
                   work well on a team and I am still learning. Analytics and reporting are where most of that effort
                   goes right now.
                 </p>

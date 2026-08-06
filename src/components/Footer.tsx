@@ -22,7 +22,7 @@ export function Footer() {
             <h2 className="text-electric-teal font-semibold tracking-wide uppercase text-sm mb-3">Contact</h2>
             <p className="text-xl font-bold text-white mb-2">Let&rsquo;s work together.</p>
             <p className="text-slate-400 text-sm max-w-md leading-relaxed">
-              Open to digital marketing roles and collaboration. The quickest way to reach me is by email.
+              Always happy to talk about marketing work. Email is the quickest way to reach me.
             </p>
           </div>
 

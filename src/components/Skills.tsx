@@ -41,7 +41,7 @@ const skills = [
   {
     icon: BarChart3,
     title: 'Analytics & Reporting',
-    description: 'Tracking what content and campaigns actually did, and reporting clearly on what is worth repeating.'
+    description: 'Pulling performance data into clear reports, so decisions come from more than a hunch.'
   }
 ];
 
