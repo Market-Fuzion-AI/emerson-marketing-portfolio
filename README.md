@@ -57,7 +57,10 @@ workflow steps means editing that one file — no component changes needed.
 
 ## Adding project screenshots
 
-Each project has a directory under `public/images/` matching its `id` in `src/data/projects.ts`:
+Everything below is the complete process. Screenshots are added by editing **one file**,
+`src/data/projects.ts`. No component ever needs changing.
+
+### 1. Where files go
 
 | Project | Directory | File prefix |
 | --- | --- | --- |
@@ -66,44 +69,53 @@ Each project has a directory under `public/images/` matching its `id` in `src/da
 | Prospecting Command Center | `public/images/prospecting-command-center/` | `prospecting-` |
 | AI Content Studio | `public/images/ai-content-studio/` | `content-studio-` |
 
-### Naming convention
+Paths in `projects.ts` are absolute from the site root and omit `public`, so a file at
+`public/images/milwautea/milwautea-01-logo.webp` is referenced as
+`/images/milwautea/milwautea-01-logo.webp`.
+
+### 2. Naming convention
 
 `<prefix><NN>-<subject>.webp`
 
 Two-digit numbers so files sort correctly past nine. Lowercase, hyphen-separated, one subject
-word. The number sets display order; the subject makes the file findable a year from now.
+word. The number records intended order; the subject makes the file findable a year from now.
 
 ```
-milwautea-01-logo.webp                 instagram-01-trigger.webp
-milwautea-02-mascot.webp               instagram-02-manychat.webp
-milwautea-03-menu.webp                 instagram-03-make-scenario.webp
-milwautea-04-social.webp               instagram-04-slack.webp
+milwautea-01-logo.webp              instagram-01-trigger.webp
+milwautea-02-mascot.webp            instagram-02-manychat.webp
+milwautea-03-menu.webp              instagram-03-make-scenario.webp
+milwautea-04-social.webp            instagram-04-slack.webp
 milwautea-05-promo.webp
-milwautea-06-video.webp                prospecting-01-pipeline.webp
-                                       prospecting-02-qualification.webp
-content-studio-01-research.webp        prospecting-03-followup.webp
-content-studio-02-script.webp
-content-studio-03-output.webp
+milwautea-06-video.webp             prospecting-01-pipeline.webp
+                                    prospecting-02-qualification.webp
+content-studio-01-research.webp     prospecting-03-followup.webp
+content-studio-02-ideas.webp
+content-studio-03-hooks.webp
+content-studio-04-script.webp
+content-studio-05-images.webp
 ```
 
-Use `.webp`. Fall back to `.png` for screenshots with sharp text if webp shows artifacts, and
-`.jpg` only for photographs.
+### 3. Format and dimensions
 
-### Recommended count per project
+| | |
+| --- | --- |
+| **Format** | `.webp`. Use `.png` if webp shows artifacts on sharp text, `.jpg` only for photographs. |
+| **Width** | 1200 to 1600px. The lightbox caps near 1024px, so anything wider is wasted bytes. |
+| **Aspect** | Keep the source aspect ratio. Thumbnails crop to 4:3 automatically; the lightbox shows the full image. |
+| **File size** | Aim under 250KB each. |
+| **Cropping** | Crop to the content that matters. A full desktop screenshot loses its subject at thumbnail size. |
 
-| Project | Screenshots | Why |
-| --- | ---: | --- |
-| MilwauTea | 6 | The featured case study, and the only project with three distinct disciplines to evidence. Six fills two clean rows of three. |
-| Instagram DM Funnel | 4 | One per stage of the lead journey. Fewer breaks the narrative; more repeats it. |
-| Prospecting Command Center | 3 | One row. The pipeline is one screen viewed three ways. |
-| AI Content Studio | 3 | One row. Enough to show input, middle, and output. |
+Because thumbnails crop to 4:3 from the centre, put the important part of the image near the
+middle or crop it there yourself before exporting.
 
-Sixteen total. Resist adding more. Every extra screenshot dilutes the ones that matter, and the
-count deliberately tapers to match the page hierarchy.
+### 4. Ordering
 
-### Making them appear
+Display order is the order of the `images` array in `projects.ts`, not the filename. The numeric
+prefix is a convention for humans; reordering the array is what actually moves an image.
 
-Add them to the `images` array for that project in `src/data/projects.ts`:
+### 5. Adding or replacing
+
+Add entries to the `images` array for that project:
 
 ```ts
 images: [
@@ -112,14 +124,25 @@ images: [
 ],
 ```
 
-That is the only file to edit. No component changes are needed, at any count.
+- **To add**, drop the file in the project directory and append an entry.
+- **To replace**, overwrite the file and update the `alt` if the subject changed. If the filename
+  changes, update the `src` too.
+- **To remove**, delete the array entry and the file. An empty array is valid and renders neutral
+  empty frames.
 
 Every image needs a descriptive `alt`. It is read by screen readers and used as the lightbox
-label. While `images` is empty, the gallery renders placeholder tiles.
+label, so describe the subject rather than writing "screenshot".
 
-**Before adding images:** resize and compress. Thumbnails render at a 4:3 aspect ratio and the
-lightbox caps near 1024px wide, so anything beyond ~1600px wide is wasted bytes. Crop to the
-content that matters rather than shipping a full desktop screenshot.
+### 6. Recommended count per project
+
+| Project | Screenshots | Why |
+| --- | ---: | --- |
+| MilwauTea | 6 | The featured case study, and the only project with three distinct disciplines to evidence. Six fills two clean rows of three. |
+| AI Content Studio | 5 | The workflow is a sequence, and each step is a different artefact. Fewer than five breaks the story. |
+| Instagram DM Funnel | 4 | One per stage of the lead journey. Fewer breaks the narrative; more repeats it. |
+| Prospecting Command Center | 3 | One row. The pipeline is one screen viewed three ways. |
+
+Eighteen total. Resist adding more. Every extra screenshot dilutes the ones that matter.
 
 ## Asset collection checklist
 
@@ -134,6 +157,14 @@ Working notes for gathering screenshots. Not rendered anywhere on the site.
 - [ ] Promotional / giveaway design
 - [ ] Video still or CapCut timeline
 - [ ] Instagram or Facebook profile grid
+
+**AI Content Studio** (target 5, in this order)
+
+- [ ] 1. Topic research
+- [ ] 2. Content ideas
+- [ ] 3. Hook selection
+- [ ] 4. Script creation
+- [ ] 5. Image generation
 
 **Instagram DM Funnel** (target 4)
 
@@ -150,13 +181,7 @@ Working notes for gathering screenshots. Not rendered anywhere on the site.
 - [ ] Follow-up or outreach tracking
 - [ ] Archive view
 
-**AI Content Studio** (target 3)
+Except for AI Content Studio, whose five are a fixed sequence, the checklists list more
+candidates than the target count on purpose. Shoot wide, then pick the strongest.
 
-- [ ] Topic research
-- [ ] Idea and hook development
-- [ ] Script draft
-- [ ] Generated image
-- [ ] Finished published post
-
-Checklists list more candidates than the target count on purpose. Shoot wide, then pick the
-strongest. Redact client names, emails, phone numbers and any real lead data before exporting.
+**Before exporting:** redact client names, emails, phone numbers and any real lead data.

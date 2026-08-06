@@ -5,51 +5,44 @@ import { Lightbox } from './Lightbox';
 
 type ScreenshotGalleryProps = {
   images: ProjectImage[];
-  /** Number of empty tiles to show when `images` is empty. */
+  /** Number of empty frames to hold the layout before images are added. */
   placeholderCount?: number;
-  /** Caption shown beneath empty tiles. */
-  placeholderLabel?: string;
 };
 
+const GRID = 'grid grid-cols-2 sm:grid-cols-3 gap-3 mt-6';
 const TILE = 'aspect-[4/3] w-full rounded-lg border border-slate-200 shadow-sm';
 
 /**
- * A 3-up grid of project screenshots, each opening in a shared Lightbox.
+ * A grid of project screenshots, each opening in a shared Lightbox.
  *
  * Thumbnails are real buttons so they can be reached and activated by
- * keyboard. When no images have been added yet, the gallery renders
- * inert placeholder tiles that hold the layout for future evidence.
+ * keyboard. Two across on phones and three from the small breakpoint up,
+ * which keeps thumbnails legible on a narrow screen without changing the
+ * tablet or desktop layout.
+ *
+ * With no images the grid renders neutral empty frames that hold the same
+ * space the screenshots will occupy. They disappear the moment the project's
+ * `images` array is populated. No component change is needed to add images.
  */
-export function ScreenshotGallery({
-  images,
-  placeholderCount = 3,
-  placeholderLabel = 'Screenshots to be added',
-}: ScreenshotGalleryProps) {
+export function ScreenshotGallery({ images, placeholderCount = 3 }: ScreenshotGalleryProps) {
   const [selectedImage, setSelectedImage] = useState<ProjectImage | null>(null);
   const closeLightbox = useCallback(() => setSelectedImage(null), []);
 
   if (images.length === 0) {
     return (
-      <div className="mt-6">
-        <div className="grid grid-cols-3 gap-3">
-          {Array.from({ length: placeholderCount }).map((_, i) => (
-            <div
-              key={i}
-              aria-hidden="true"
-              className={`${TILE} bg-slate-50 border-dashed flex items-center justify-center text-slate-300`}
-            >
-              <ImageIcon size={20} />
-            </div>
-          ))}
-        </div>
-        <p className="mt-3 text-xs font-medium text-slate-400">{placeholderLabel}</p>
+      <div className={GRID} aria-hidden="true">
+        {Array.from({ length: placeholderCount }).map((_, i) => (
+          <div key={i} className={`${TILE} bg-slate-50 flex items-center justify-center text-slate-300`}>
+            <ImageIcon size={20} />
+          </div>
+        ))}
       </div>
     );
   }
 
   return (
     <>
-      <div className="grid grid-cols-3 gap-3 mt-6">
+      <div className={GRID}>
         {images.map((image) => (
           <button
             key={image.src}

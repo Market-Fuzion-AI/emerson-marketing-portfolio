@@ -128,10 +128,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
       <div className="mb-2">
         <h4 className={LABEL}>Work Samples</h4>
         <p className="text-slate-600 leading-relaxed max-w-3xl">{project.galleryIntro}</p>
-        <ScreenshotGallery
-          images={project.images}
-          placeholderLabel={`Screenshots for ${project.title} to be added`}
-        />
+        <ScreenshotGallery images={project.images} />
       </div>
     </motion.article>
   );
