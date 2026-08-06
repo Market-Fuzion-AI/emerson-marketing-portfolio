@@ -55,7 +55,16 @@ export const projects: Project[] = [
       'This was the first time I owned marketing for a real business rather than a personal project. The fixed opening date was the useful constraint: it forced me to decide what needed to exist, then publish consistently instead of polishing one asset. It is the work I point to when I want to show I can carry a launch.',
     galleryIntro:
       'Examples of the branding, marketing assets, and promotional work created during the launch.',
-    images: [],
+    // Planned gallery, in storytelling order. Add the file to
+    // public/images/milwautea/ then uncomment its line.
+    images: [
+      // { src: '/images/milwautea/milwautea-01-logo.webp', alt: 'MilwauTea logo in its final form' },
+      // { src: '/images/milwautea/milwautea-02-mascot.webp', alt: 'MilwauTea mascot character used across the brand' },
+      // { src: '/images/milwautea/milwautea-03-menu.webp', alt: 'MilwauTea drink menu laid out for in-store display' },
+      // { src: '/images/milwautea/milwautea-04-social.webp', alt: 'MilwauTea Instagram feed showing the launch content' },
+      // { src: '/images/milwautea/milwautea-05-promo.webp', alt: 'MilwauTea promotional graphic for a launch offer' },
+      // { src: '/images/milwautea/milwautea-06-video.webp', alt: 'Still from a MilwauTea short-form video made for social' },
+    ],
   },
   {
     id: 'instagram-dm-automation',
@@ -130,7 +139,13 @@ export const projects: Project[] = [
     ],
     galleryIntro:
       'Examples of the lead qualification workflow, CRM organization, and outreach pipeline.',
-    images: [],
+    // Planned gallery, in storytelling order. Add the file to
+    // public/images/prospecting-command-center/ then uncomment its line.
+    images: [
+      // { src: '/images/prospecting-command-center/prospecting-01-research.webp', alt: 'Prospect research view listing local businesses to evaluate' },
+      // { src: '/images/prospecting-command-center/prospecting-02-qualification.webp', alt: 'Lead scoring view with qualification criteria applied' },
+      // { src: '/images/prospecting-command-center/prospecting-03-pipeline.webp', alt: 'Deal pipeline showing leads at each follow-up stage' },
+    ],
   },
   {
     id: 'ai-content-studio',
@@ -158,6 +173,14 @@ export const projects: Project[] = [
     ],
     galleryIntro:
       'Examples of the research, planning, scripting, and content production workflow.',
-    images: [],
+    // Planned gallery, in storytelling order. Add the file to
+    // public/images/ai-content-studio/ then uncomment its line.
+    images: [
+      // { src: '/images/ai-content-studio/content-studio-01-research.webp', alt: 'Topic research gathering subjects worth covering' },
+      // { src: '/images/ai-content-studio/content-studio-02-ideas.webp', alt: 'Content ideas developed from the research' },
+      // { src: '/images/ai-content-studio/content-studio-03-hooks.webp', alt: 'Hook options written for the chosen idea' },
+      // { src: '/images/ai-content-studio/content-studio-04-script.webp', alt: 'Script drafted for a short-form video' },
+      // { src: '/images/ai-content-studio/content-studio-05-images.webp', alt: 'Generated image created to support the post' },
+    ],
   },
 ];
