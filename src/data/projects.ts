@@ -83,7 +83,26 @@ export const projects: Project[] = [
     ],
     galleryIntro:
       'Examples of the automation workflow and lead journey, from Instagram engagement through follow-up.',
-    images: [],
+    // PROVISIONAL: pre-existing files surfaced for visual review only, pending
+    // approval. Not yet confirmed as evidence for this project.
+    images: [
+      {
+        src: '/images/make-automation/automation-1.png',
+        alt: 'Make.com scenario connecting a custom webhook to OpenAI and a Slack message',
+      },
+      {
+        src: '/images/make-automation/automation-2.png',
+        alt: 'Make.com scenario sending a webhook payload through OpenAI to Slack',
+      },
+      {
+        src: '/images/slack/slack-1.png',
+        alt: 'Automated daily report delivered to a Slack channel',
+      },
+      {
+        src: '/images/slack/slack-2.png',
+        alt: 'AI-generated social media post draft delivered to Slack, showing concept, hook, caption and call to action',
+      },
+    ],
   },
   {
     id: 'prospecting-command-center',
